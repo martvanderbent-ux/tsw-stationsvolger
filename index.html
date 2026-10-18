@@ -6,7 +6,8 @@
 <meta name="theme-color" content="#edf4f8" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-<title>TSW Companion — machinistenmodus</title>
+<meta name="tsw-companion-version" content="14" />
+<title>TSW Companion — v14</title>
 <style>
 :root{
   color-scheme:light;
@@ -478,6 +479,114 @@ input:focus,textarea:focus,select:focus{border-color:#48a7ff;box-shadow:0 0 0 3p
 
 @media (max-width:1200px){.routepicker .cardgrid,.cardgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:760px){.routepicker .cardgrid,.cardgrid{grid-template-columns:1fr}.routepicker .routecard{min-height:150px}.homework{grid-template-columns:1fr}}
+
+/* v12 — zichtbaar vertrekbord en zelf in te vullen aankomstsporen */
+.prep-time-head,.prep-time-row{grid-template-columns:minmax(120px,1fr) minmax(88px,115px) minmax(88px,115px) minmax(64px,92px);gap:8px}
+.prep-track-input{width:100%;min-width:0;max-width:none;min-height:39px;padding:8px 5px;border:1px solid #476784;border-radius:10px;background:#102b45;color:#eaf9ff;text-align:center;font-size:14px;font-weight:800;letter-spacing:.025em;outline:none}
+.prep-track-input::placeholder{color:#7b99b2}
+.prep-track-input:focus-visible{border-color:#62baf5;box-shadow:0 0 0 3px #328dd83d}
+.times-table .editrow{grid-template-columns:minmax(145px,1fr) minmax(90px,135px) minmax(90px,135px) minmax(65px,100px)}
+.dm-platform{font-size:9px;color:#ccedff;background:#28516d;border:1px solid #447697;border-radius:5px;padding:2px 5px;white-space:nowrap;font-weight:850}
+.driver-side>.departure-board{order:-1;border-color:#527392;box-shadow:0 12px 34px #0006}
+.driver-side>.driver-monitor{order:1}
+.departure-board .db-topline{padding:11px 16px}
+.departure-board .db-main{padding:13px 16px 14px}
+.departure-board .db-above{margin-bottom:7px}
+.departure-board .db-dest{align-items:center}
+.departure-board .db-dest strong{font-size:clamp(22px,2.25vw,31px);font-weight:900}
+.departure-board .db-dest b{font-size:clamp(28px,2.65vw,37px);font-weight:950;color:#ffdc6b;line-height:1}
+.departure-board .db-journey{font-size:10px;line-height:1.5;margin-top:9px}
+.departure-board .db-journey b{color:#d9efff}
+.departure-board .db-lower{grid-template-columns:.9fr 1.3fr 1fr}
+.departure-board .db-lower div{padding:10px 13px}
+.departure-board .db-lower span{margin-bottom:5px}
+.departure-board .db-lower .db-platform-value{font-size:clamp(22px,2.2vw,28px);line-height:1.1;color:#ffdc6b}
+.departure-board .db-note{padding:5px 9px}
+@media (min-width:1071px){.driver-side>.driver-monitor .dm-scroll{max-height:min(34vh,340px)}}
+@media (max-width:700px){
+ .prep-rows{overflow-x:auto}
+ .prep-time-head,.prep-time-row{min-width:490px;grid-template-columns:minmax(145px,1fr) minmax(85px,105px) minmax(85px,105px) minmax(64px,75px);gap:6px}
+ .times-table{overflow-x:auto}
+ .times-table .editrow{min-width:505px;grid-template-columns:minmax(155px,1fr) minmax(100px,125px) minmax(100px,125px) minmax(65px,90px);gap:7px}
+ .departure-board .db-dest strong{font-size:22px}
+ .departure-board .db-dest b{font-size:26px}
+}
+
+/* v13 — iPad cabine, dienstinvoer, materieel en vervoerdersborden */
+.driver-v13 .workflow-head{padding-bottom:10px}
+.driver-v13 .workflow-head h1{font-size:clamp(23px,2.5vw,33px);margin:4px 0}
+.driver-v13 .driver-columns{grid-template-columns:minmax(0,1fr) minmax(360px,.94fr);gap:13px}
+.driver-v13 .driver-side{position:sticky;top:9px;align-self:start}
+.driver-v13 .departure-board{order:0!important}
+.driver-v13 .driver-monitor{order:1!important}
+.driver-v13 .driver-hero{padding:clamp(17px,1.8vw,24px)}
+.driver-v13 .driver-hero h2{margin:5px 0 9px;font-size:clamp(24px,2.6vw,38px)}
+.driver-v13 .driver-next{padding-top:10px;margin-top:0}
+.driver-v13 .driver-next h3{margin:4px 0 12px}
+.driver-v13 .driver-metrics{margin-bottom:11px}
+.driver-v13 .driver-metrics>div{padding:10px}
+.driver-v13 .driver-main-action{min-height:76px;box-shadow:0 10px 25px #0005}
+.driver-v13 .driver-progress{margin-top:12px}
+.driver-v13 .dm-scroll{max-height:clamp(190px,31vh,325px)}
+.driver-equipment{margin:2px 0 6px;display:inline-flex;width:max-content;max-width:100%;border-radius:9px;border:1px solid #4a7196;background:#153657bf;color:#bbdef6;padding:6px 9px;font-size:12px;font-weight:800}
+.driver-story-card .driver-story-actions{display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+.story-source{display:inline-block;color:#87c6f9!important;margin-top:5px;font-size:11px;text-underline-offset:3px}
+.prep-quick-tools{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
+.prep-quick-tools .btn{background:#193b5c;color:#c8e8ff;border-color:#426c90}
+.equipment-field{display:flex;gap:7px}
+.equipment-field input{min-width:0;flex:1}
+.equipment-field .btn{flex-shrink:0}
+.curated-route-fact{margin-top:14px;background:#153e52;border:1px solid #397b92;border-radius:15px;padding:13px 17px;font-size:13px;color:#d8eff7;line-height:1.55}
+.curated-route-fact strong{font-size:14px;color:#d6fded}
+.curated-route-fact p{margin:8px 0 0}
+.departure-board .db-carrier{font-size:clamp(17px,1.8vw,23px)}
+.departure-board .db-dest strong{font-size:clamp(21px,2.15vw,30px)}
+.departure-board .db-dest b{font-size:clamp(27px,2.7vw,40px)}
+.departure-board .db-lower .db-platform-value{font-size:clamp(21px,2.2vw,30px);color:#fcf7ac}
+.departure-board.board-uk{border-color:#53677b}
+.departure-board.board-uk .db-topline{background:#25334a;color:#ffdf73;border-bottom:4px solid var(--operator)}
+.departure-board.board-uk .db-main{background:#080d15}
+.departure-board.board-uk .db-dest b{color:#ffd763}
+.departure-board.board-db{border-color:#bb3543}
+.departure-board.board-db .db-topline{background:#f2f4f7;color:#c32532;border-bottom:5px solid #d92336}
+.departure-board.board-db .db-main{background:#102747}
+.departure-board.board-db .db-dest b{color:#eff7ff}
+.departure-board.board-ns{border-color:#f6d320}
+.departure-board.board-ns .db-topline{background:#fbdc23;color:#102c55;border-bottom:5px solid #1677b7}
+.departure-board.board-ns .db-main{background:#102d54}
+.departure-board.board-ns .db-dest b{color:#ffdc3c}
+.departure-board.board-us .db-topline{background:var(--operator);border-bottom:4px solid #fff6}
+.departure-board.board-us .db-main{background:#121b2b}
+.departure-board.board-alps .db-topline{border-bottom:4px solid #fff8}
+@media (min-width:1000px) and (orientation:landscape){
+ .driver-v13 .driver-depart-hint{padding:9px 11px;margin:-2px 0 10px}
+ .driver-v13 .driver-monitor .dm-head{padding:10px 14px}
+ .driver-v13 .driver-monitor .dm-stop{min-height:31px}
+ .driver-v13 .driver-monitor .dm-scroll{max-height:min(29vh,295px)}
+ .driver-v13 .db-main{padding:12px 15px 13px}
+ .driver-v13 .db-lower div{padding:10px}
+ .driver-v13 .db-note{padding:4px}
+ .driver-v13 .db-topline{padding:10px 14px}
+}
+@media(max-width:1070px){.driver-v13 .driver-side{position:static;display:flex;flex-direction:column}.driver-v13 .driver-columns{grid-template-columns:1fr}.driver-v13 .driver-side .departure-board{order:0}.driver-v13 .driver-side .driver-monitor{order:1}}
+@media(max-width:700px){.driver-story-card{flex-wrap:wrap}.driver-story-card .driver-story-actions{flex-direction:row;width:100%}.equipment-field{flex-wrap:wrap}.equipment-field input{min-width:140px}}
+
+.equipment-info-card{display:flex;gap:12px;align-items:center;background:#102942;border:1px solid #345977;border-radius:13px;padding:9px;margin-top:10px;color:#d7eaf8}
+.equipment-info-card>div{flex:1;min-width:0}
+.equipment-info-card img{display:block;width:96px;height:76px;flex:0 0 96px;object-fit:cover;border-radius:8px;background:#15263c}
+.equipment-info-card strong{font-size:13px;color:#f3faff}
+.equipment-info-card p{font-size:11px;line-height:1.45;margin:4px 0 5px;color:#aec5da}
+.equipment-sources{font-size:10px;line-height:1.4}
+.equipment-sources a{color:#88caff}
+.driver-main>.equipment-info-card{margin-top:0}
+@media (min-width:1000px) and (max-height:900px){.driver-main>.equipment-info-card{padding:6px}.driver-main>.equipment-info-card img{width:65px;height:52px;flex-basis:65px}}
+/* v14: duidelijk maar niet opdringerig updatemelding */
+.update-dot{font-size:11px;color:#55d9a9;margin-left:4px}
+.update-banner{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;margin:0 0 16px;padding:14px 18px;background:linear-gradient(110deg,#102e47,#133d50);border:1px solid #397e91;border-radius:16px;color:#effaff;box-shadow:0 10px 26px rgba(2,12,26,.17)}
+.update-banner strong{display:block;font-size:14px}
+.update-banner span{display:block;font-size:12px;color:#b7d9df;margin-top:4px;line-height:1.5}
+.update-banner .btn.ghost{background:#214c64;color:#effaff;border-color:#537d90}
+@media(max-width:700px){.update-banner{align-items:stretch}.update-banner .wrap{width:100%}.update-banner .wrap button{flex:1}}
 </style>
 </head>
 <body>
@@ -487,14 +596,19 @@ input:focus,textarea:focus,select:focus{border-color:#48a7ff;box-shadow:0 0 0 3p
       <div class="brandicon">↗</div>
       <div>
         <strong>TSW Companion</strong>
-        <small>Jouw persoonlijke Train Sim World-dashboard</small>
+        <small>Jouw persoonlijke Train Sim World-dashboard · v14</small>
       </div>
     </div>
     <div class="top-actions">
+      <button class="btn ghost sm" data-act="update-menu" title="Versie en updates beheren">↻ Updates <span class="update-dot" id="updateDot" hidden>●</span></button>
       <button class="btn ghost sm" data-act="export">↓ Back-up</button>
       <button class="btn ghost sm" data-act="import">↑ Importeren</button>
     </div>
   </header>
+  <div class="update-banner hide" id="updateBanner" role="status" aria-live="polite">
+    <div><strong id="updateBannerTitle">Nieuwe versie beschikbaar</strong><span id="updateBannerSub">Je opgeslagen diensten blijven lokaal bewaard.</span></div>
+    <div class="wrap"><button class="btn primary sm" data-act="update-refresh">Nu bijwerken</button><button class="btn ghost sm" data-act="update-later">Later</button></div>
+  </div>
   <div id="app"></div>
   <footer class="foot">Zelfstandige app voor iPad en computer. Dienstcodes, tijden, stationsverhalen en weetjes worden lokaal in je browser bewaard; maak geregeld een JSON-back-up. Foto’s laden via Wikimedia Commons en vereisen internetverbinding. Fotobronnen, auteurs en licenties staan per route vermeld. Geen officiële Dovetail-app.</footer>
 </main>
@@ -505,6 +619,7 @@ input:focus,textarea:focus,select:focus{border-color:#48a7ff;box-shadow:0 0 0 3p
 (()=>{
 'use strict';
 const KEY='tsw_machinist_lite_v1';
+const APP_VERSION='14'; // Verhoog bij elke nieuwe release samen met de meta-tag in <head>.
 const DEFAULTS=[{"id": "ecw", "name": "East Coastway", "country": "🇬🇧", "sub": "Southern · Basis", "note": "Kies je traject en bewaar je eigen diensten met dienstcode.", "segments": [{"id": "ecw1", "name": "Brighton → Eastbourne", "stops": ["Brighton", "London Road", "Moulsecoomb", "Falmer", "Lewes", "Glynde", "Berwick", "Polegate", "Hampden Park", "Eastbourne"]}, {"id": "ecw2", "name": "Brighton → Seaford", "stops": ["Brighton", "London Road", "Moulsecoomb", "Falmer", "Lewes", "Southease", "Newhaven Town", "Newhaven Harbour", "Bishopstone", "Seaford"]}, {"id": "ecw3", "name": "Lewes → Eastbourne", "stops": ["Lewes", "Glynde", "Berwick", "Polegate", "Hampden Park", "Eastbourne"]}]}, {"id": "airedale", "name": "Airedale & Wharfedale", "country": "🇬🇧", "sub": "Northern · TSW 7", "note": "Basistrajecten voor jouw persoonlijke dienstenbibliotheek.", "segments": [{"id": "air1", "name": "Leeds → Skipton", "stops": ["Leeds", "Kirkstall Forge", "Apperley Bridge", "Shipley", "Saltaire", "Bingley", "Crossflatts", "Keighley", "Steeton & Silsden", "Cononley", "Skipton"]}, {"id": "air2", "name": "Leeds → Ilkley", "stops": ["Leeds", "Kirkstall Forge", "Apperley Bridge", "Guiseley", "Menston", "Burley-in-Wharfedale", "Ben Rhydding", "Ilkley"]}, {"id": "air3", "name": "Bradford → Skipton", "stops": ["Bradford Forster Square", "Frizinghall", "Shipley", "Saltaire", "Bingley", "Crossflatts", "Keighley", "Steeton & Silsden", "Cononley", "Skipton"]}, {"id": "air4", "name": "Bradford → Ilkley", "stops": ["Bradford Forster Square", "Frizinghall", "Shipley", "Baildon", "Guiseley", "Menston", "Burley-in-Wharfedale", "Ben Rhydding", "Ilkley"]}]}, {"id": "frankfurt", "name": "Frankfurt S-Bahn", "country": "🇩🇪", "sub": "2018 · S1 / S8 / S9", "note": "Lichte rit-app met focus op traject en machinistenscherm.", "segments": [{"id": "fra1", "name": "S1 Frankfurt → Wiesbaden", "stops": ["Frankfurt (Main) Hbf (tief)", "Frankfurt-Griesheim", "Frankfurt-Nied", "Frankfurt-Höchst", "Frankfurt-Farbwerke", "Frankfurt-Sindlingen", "Hattersheim (Main)", "Eddersheim", "Flörsheim (Main)", "Hochheim (Main)", "Mainz-Kastel", "Wiesbaden Ost", "Wiesbaden Hbf"]}, {"id": "fra2", "name": "S8 Frankfurt → Wiesbaden (via Mainz)", "stops": ["Frankfurt (Main) Hbf (tief)", "Frankfurt-Niederrad", "Frankfurt (Main) Stadion", "Frankfurt (Main) Flughafen Regionalbf", "Kelsterbach", "Raunheim", "Rüsselsheim", "Rüsselsheim Opelwerk", "Mainz-Bischofsheim", "Mainz-Gustavsburg", "Mainz Römisches Theater", "Mainz Hbf", "Mainz Nord", "Wiesbaden Ost", "Wiesbaden Hbf"]}, {"id": "fra3", "name": "S9 Frankfurt → Wiesbaden (via Kastel)", "stops": ["Frankfurt (Main) Hbf (tief)", "Frankfurt-Niederrad", "Frankfurt (Main) Stadion", "Frankfurt (Main) Flughafen Regionalbf", "Kelsterbach", "Raunheim", "Rüsselsheim", "Rüsselsheim Opelwerk", "Mainz-Bischofsheim", "Mainz-Kastel", "Wiesbaden Ost", "Wiesbaden Hbf"]}]}, {"id": "nuernberg", "name": "Nürnberg–Würzburg", "country": "🇩🇪", "sub": "TSW 7", "note": "Basistrajecten; de tijden vul je zelf aan per dienst.", "segments": [{"id": "nuw1", "name": "RE10 Nürnberg → Würzburg", "stops": ["Nürnberg Hbf", "Fürth (Bay) Hbf", "Siegelsdorf", "Emskirchen", "Neustadt (Aisch) Bahnhof", "Markt Bibart", "Iphofen", "Kitzingen", "Buchbrunn-Mainstockheim", "Dettelbach Bahnhof", "Rottendorf", "Würzburg Hbf"]}, {"id": "nuw2", "name": "ICE Nürnberg → Würzburg", "stops": ["Nürnberg Hbf", "Würzburg Hbf"]}, {"id": "nuw3", "name": "S6 Nürnberg → Neustadt (Aisch)", "stops": ["Nürnberg Hbf", "Fürth (Bay) Hbf", "Unterfürberg", "Burgfarrnbach", "Siegelsdorf", "Puschendorf", "Hagenbüchach", "Emskirchen", "Neustadt (Aisch) Mitte", "Neustadt (Aisch) Bahnhof"]}]}, {"id": "trirail", "name": "Florida Tri-Rail", "country": "🇺🇸", "sub": "TSW 7", "note": "Eenvoudige routekeuze met persoonlijke diensten en tijden.", "segments": [{"id": "tri1", "name": "Miami Airport → Boca Raton", "stops": ["Miami Airport", "Hialeah Market", "Metrorail Transfer", "Opa-locka", "Golden Glades", "Hollywood", "Sheridan Street", "Fort Lauderdale Airport", "Fort Lauderdale", "Cypress Creek", "Pompano Beach", "Deerfield Beach", "Boca Raton"]}]}, {"id": "rapid", "name": "Rapid Transit", "country": "🇩🇪", "sub": "2021 · S-Bahn Leipzig", "note": "Gebouwd om zelf dienstcodes en tijden op te slaan.", "segments": [{"id": "rap1", "name": "Dessau → Markkleeberg-Gaschwitz", "stops": ["Dessau Hbf", "Dessau Süd", "Marke", "Raguhn", "Jeßnitz", "Wolfen", "Greppin", "Bitterfeld", "Petersroda", "Delitzsch unt Bf", "Zschortau", "Rackwitz (b Leipzig)", "Leipzig Messe", "Leipzig Nord", "Leipzig Hbf (tief)", "Leipzig Markt", "Leipzig Wilhelm-Leuschner-Platz", "Leipzig Bayerischer Bahnhof", "Leipzig MDR", "Leipzig-Connewitz", "Markkleeberg Nord", "Markkleeberg", "Markkleeberg-Großstädteln", "Markkleeberg-Gaschwitz"]}, {"id": "rap2", "name": "Bitterfeld → Leipzig-Connewitz", "stops": ["Bitterfeld", "Petersroda", "Delitzsch unt Bf", "Zschortau", "Rackwitz (b Leipzig)", "Leipzig Messe", "Leipzig Nord", "Leipzig Hbf (tief)", "Leipzig Markt", "Leipzig Wilhelm-Leuschner-Platz", "Leipzig Bayerischer Bahnhof", "Leipzig MDR", "Leipzig-Connewitz"]}]}, {"id": "boston", "name": "Boston Sprinter", "country": "🇺🇸", "sub": "2021 · voorbereid", "draft": true, "note": "Voorbereidend profiel voor MBTA / Amtrak diensten.", "segments": [{"id": "bos1", "name": "MBTA Boston → Providence", "stops": ["Boston South", "Boston Back Bay", "Ruggles", "Hyde Park", "Route 128", "Canton Junction", "Sharon", "Mansfield", "Attleboro", "South Attleboro", "Providence"]}, {"id": "bos2", "name": "Amtrak Boston → Providence", "stops": ["Boston South", "Boston Back Bay", "Route 128", "Providence"]}]}, {"id": "wcml", "name": "WCML South", "country": "🇬🇧", "sub": "2024 · voorbereid", "draft": true, "note": "Voorbereidend profiel voor Euston – Milton Keynes en DC lines.", "segments": [{"id": "wcm1", "name": "Euston → Milton Keynes", "stops": ["London Euston", "Wembley Central", "Harrow & Wealdstone", "Bushey", "Watford Junction", "Kings Langley", "Apsley", "Hemel Hempstead", "Berkhamsted", "Tring", "Cheddington", "Leighton Buzzard", "Bletchley", "Milton Keynes Central"]}, {"id": "wcm2", "name": "Euston → Watford Junction (DC)", "stops": ["London Euston", "South Hampstead", "Kilburn High Road", "Queen's Park", "Kensal Green", "Willesden Junction", "Harlesden", "Stonebridge Park", "Wembley Central", "North Wembley", "South Kenton", "Kenton", "Harrow & Wealdstone", "Headstone Lane", "Hatch End", "Carpenders Park", "Bushey", "Watford High Street", "Watford Junction"]}]}];
 const EXTRA_ROUTES=[{"id":"bremen","name":"Bahnstrecke Bremen–Oldenburg","country":"🇩🇪","sub":"DB / Press Eisenbahn","operator":"DB / Press Eisenbahn","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"bremen_1","name":"Bremen → Oldenburg","stops":["Bremen Hbf","Bremen Neustadt","Heidkrug","Delmenhorst","Hoykenkamp","Schierbrok","Bookholzberg","Hude","Wüsting","Oldenburg (Oldb) Hbf"]}]},{"id":"leipdres","name":"Bahnstrecke Leipzig–Dresden","country":"🇩🇪","sub":"Deutsche Bahn","operator":"Deutsche Bahn","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"leipdres_1","name":"Leipzig → Dresden via Riesa","stops":["Leipzig Hbf","Leipzig-Sellerhausen","Leipzig-Paunsdorf","Leipzig-Engelsdorf","Borsdorf (Sachs)","Gerichshain","Machern (Sachs)","Altenbach","Bennewitz","Wurzen","Kühren","Dahlen (Sachs)","Oschatz","Riesa","Glaubitz (b Riesa)","Nünchritz","Priestewitz","Niederau","Weinböhla","Coswig (b Dresden)","Radebeul-Zitzschewig","Radebeul-Kötzschenbroda","Radebeul-Weintraube","Radebeul Ost","Dresden-Trachau","Dresden-Pieschen","Dresden Bischofsplatz","Dresden-Neustadt","Dresden Mitte","Dresden Freiberger Straße","Dresden Hbf"]},{"id":"leipdres_2","name":"Meißen Triebischtal → Dresden","stops":["Meißen Triebischtal","Meißen Altstadt","Meißen","Neusörnewitz","Coswig (b Dresden)","Radebeul-Zitzschewig","Radebeul-Kötzschenbroda","Radebeul-Weintraube","Radebeul Ost","Dresden-Trachau","Dresden-Pieschen","Dresden Bischofsplatz","Dresden-Neustadt","Dresden Mitte","Dresden Freiberger Straße","Dresden Hbf"]}]},{"id":"salzros","name":"Salzburg–Rosenheim","country":"🇦🇹","sub":"ÖBB / Deutsche Bahn","operator":"ÖBB / Deutsche Bahn","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"salzros_1","name":"Salzburg → Rosenheim","stops":["Salzburg Hbf","Salzburg Mülln-Altstadt","Salzburg Aiglhof","Salzburg Taxham Europark","Salzburg Liefering","Freilassing","Teisendorf","Traunstein","Bergen (Oberbay)","Übersee","Bernau am Chiemsee","Prien am Chiemsee","Bad Endorf","Rosenheim"]}]},{"id":"bernina","name":"Berninalinie","country":"🇨🇭","sub":"Rhätische Bahn","operator":"Rhätische Bahn","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"bernina_1","name":"Tirano → Ospizio Bernina","stops":["Tirano","Campocologno","Campascio","Brusio","Miralago","Le Prese","Li Curt","Poschiavo","Cadera","Cavaglia","Alp Grüm","Ospizio Bernina"]}]},{"id":"birm","name":"Birmingham Cross-City","country":"🇬🇧","sub":"West Midlands Trains","operator":"West Midlands Trains","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"birm_1","name":"Lichfield Trent Valley → Redditch","stops":["Lichfield Trent Valley","Lichfield City","Shenstone","Blake Street","Butlers Lane","Four Oaks","Sutton Coldfield","Wylde Green","Chester Road","Erdington","Gravelly Hill","Aston","Duddeston","Birmingham New Street","Five Ways","University","Selly Oak","Bournville","Kings Norton","Northfield","Longbridge","Barnt Green","Alvechurch","Redditch"]},{"id":"birm_2","name":"Lichfield Trent Valley → Bromsgrove","stops":["Lichfield Trent Valley","Lichfield City","Shenstone","Blake Street","Butlers Lane","Four Oaks","Sutton Coldfield","Wylde Green","Chester Road","Erdington","Gravelly Hill","Aston","Duddeston","Birmingham New Street","Five Ways","University","Selly Oak","Bournville","Kings Norton","Northfield","Longbridge","Barnt Green","Bromsgrove"]}]},{"id":"blackpool","name":"Blackpool Branches","country":"🇬🇧","sub":"British Rail","operator":"British Rail","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"blackpool_1","name":"Preston → Blackpool North","stops":["Preston","Salwick","Kirkham and Wesham","Poulton-le-Fylde","Layton","Blackpool North"]},{"id":"blackpool_2","name":"Preston → Blackpool South","stops":["Preston","Salwick","Kirkham and Wesham","Moss Side","Lytham","Ansdell & Fairhaven","St Annes-on-the-Sea","Squires Gate","Blackpool South"]},{"id":"blackpool_3","name":"Preston → Ormskirk","stops":["Preston","Croston","Rufford","Burscough Junction","Ormskirk"]}]},{"id":"bostwor","name":"Boston–Worcester","country":"🇺🇸","sub":"MBTA Commuter Rail","operator":"MBTA Commuter Rail","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"bostwor_1","name":"Boston South → Worcester","stops":["Boston South","Boston Back Bay","Lansdowne","Boston Landing","Newtonville","West Newton","Auburndale","Wellesley Farms","Wellesley Hills","Wellesley Square","Natick Center","West Natick","Framingham","Ashland","Southborough","Westborough","Grafton","Worcester"]},{"id":"bostwor_2","name":"Boston South → Framingham","stops":["Boston South","Boston Back Bay","Lansdowne","Boston Landing","Newtonville","West Newton","Auburndale","Wellesley Farms","Wellesley Hills","Wellesley Square","Natick Center","West Natick","Framingham"]}]},{"id":"cardiff","name":"Cardiff City Network","country":"🇬🇧","sub":"Transport for Wales","operator":"Transport for Wales","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"cardiff_1","name":"Radyr → Cardiff Central (City Line)","stops":["Radyr","Danescourt","Fairwater","Waun-gron Park","Ninian Park","Cardiff Central"]},{"id":"cardiff_2","name":"Coryton → Cardiff Central","stops":["Coryton","Whitchurch","Rhiwbina","Birchgrove","Ty Glas","Heath Low Level","Cardiff Queen Street","Cardiff Central"]},{"id":"cardiff_3","name":"Cardiff Central → Penarth","stops":["Cardiff Central","Grangetown","Cogan","Dingle Road","Penarth"]},{"id":"cardiff_4","name":"Cardiff Queen Street → Cardiff Bay","stops":["Cardiff Queen Street","Cardiff Bay"]},{"id":"cardiff_5","name":"Radyr → Cardiff Central via Cathays","stops":["Radyr","Llandaf","Cathays","Cardiff Queen Street","Cardiff Central"]}]},{"id":"cathcart","name":"Cathcart Circle","country":"🇬🇧","sub":"ScotRail","operator":"ScotRail","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"cathcart_1","name":"Glasgow Circle via Maxwell Park","stops":["Glasgow Central","Pollokshields West","Maxwell Park","Shawlands","Pollokshaws East","Langside","Cathcart","Mount Florida","Crosshill","Queens Park","Pollokshields East","Glasgow Central"]},{"id":"cathcart_2","name":"Glasgow → Neilston via Maxwell Park","stops":["Glasgow Central","Pollokshields West","Maxwell Park","Shawlands","Pollokshaws East","Langside","Cathcart","Muirend","Williamwood","Whitecraigs","Patterton","Neilston"]},{"id":"cathcart_3","name":"Glasgow → Newton via Mount Florida","stops":["Glasgow Central","Pollokshields East","Queens Park","Crosshill","Mount Florida","Cathcart","Kings Park","Croftfoot","Burnside","Kirkhill","Newton"]}]},{"id":"ecmlpbd","name":"Peterborough–Doncaster (ECML)","country":"🇬🇧","sub":"LNER","operator":"LNER","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"ecmlpbd_1","name":"Peterborough → Doncaster","stops":["Peterborough","Grantham","Newark North Gate","Retford","Doncaster"]}]},{"id":"edglas","name":"Edinburgh–Glasgow","country":"🇬🇧","sub":"ScotRail","operator":"ScotRail","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"edglas_1","name":"Edinburgh Waverley → Glasgow Queen Street","stops":["Edinburgh Waverley","Edinburgh Haymarket","Edinburgh Park","Linlithgow","Polmont","Falkirk High","Croy","Lenzie","Bishopbriggs","Glasgow Queen Street"]}]},{"id":"fife","name":"Fife Circle & Levenmouth","country":"🇬🇧","sub":"ScotRail","operator":"ScotRail","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"fife_1","name":"Edinburgh → Markinch via Kirkcaldy","stops":["Edinburgh Waverley","Edinburgh Haymarket","South Gyle","Edinburgh Gateway","Dalmeny","North Queensferry","Inverkeithing","Dalgety Bay","Aberdour","Burntisland","Kinghorn","Kirkcaldy","Markinch"]},{"id":"fife_2","name":"Edinburgh → Glenrothes via Dunfermline","stops":["Edinburgh Waverley","Edinburgh Haymarket","South Gyle","Edinburgh Gateway","Dalmeny","North Queensferry","Inverkeithing","Rosyth","Dunfermline City","Dunfermline Queen Margaret","Cowdenbeath","Lochgelly","Cardenden","Glenrothes with Thornton"]},{"id":"fife_3","name":"Edinburgh → Leven (Levenmouth)","stops":["Edinburgh Waverley","Edinburgh Haymarket","South Gyle","Edinburgh Gateway","Dalmeny","North Queensferry","Inverkeithing","Dalgety Bay","Aberdour","Burntisland","Kinghorn","Kirkcaldy","Cameron Bridge","Leven"]}]},{"id":"stutt","name":"Stuttgart–Heilbronn (Frankenbahn)","country":"🇩🇪","sub":"Deutsche Bahn","operator":"Deutsche Bahn","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"stutt_1","name":"Stuttgart Hbf → Heilbronn Hbf","stops":["Stuttgart Hbf","Stuttgart Nord","Stuttgart-Feuerbach","Stuttgart-Zuffenhausen","Kornwestheim","Ludwigsburg","Asperg","Tamm (Württ)","Bietigheim-Bissingen","Besigheim","Walheim (Württ)","Lauffen (Neckar)","Nordheim (Württ)","Heilbronn Hbf"]}]},{"id":"glossop","name":"Glossop Line","country":"🇬🇧","sub":"Northern","operator":"Northern","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"glossop_1","name":"Manchester → Glossop → Hadfield","stops":["Manchester Piccadilly","Ardwick","Ashburys","Gorton","Fairfield","Guide Bridge","Flowery Field","Newton for Hyde","Godley","Hattersley","Broadbottom","Dinting","Glossop","Dinting","Hadfield"]},{"id":"glossop_2","name":"Manchester → Hadfield (zonder Glossop)","stops":["Manchester Piccadilly","Ardwick","Ashburys","Gorton","Fairfield","Guide Bridge","Flowery Field","Newton for Hyde","Godley","Hattersley","Broadbottom","Dinting","Hadfield"]}]},{"id":"gwe","name":"Great Western Express","country":"🇬🇧","sub":"Great Western Railway","operator":"Great Western Railway","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"gwe_1","name":"London Paddington → Reading","stops":["London Paddington","Acton Main Line","Ealing Broadway","West Ealing","Hanwell","Southall","Hayes & Harlington","West Drayton","Iver","Langley","Slough","Burnham","Taplow","Maidenhead","Twyford","Reading"]}]},{"id":"harlem","name":"Harlem Line","country":"🇺🇸","sub":"Metro-North Railroad","operator":"Metro-North Railroad","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"harlem_1","name":"Grand Central → North White Plains","stops":["Grand Central Terminal","Harlem–125th Street","Melrose","Tremont","Fordham","Botanical Garden","Williams Bridge","Woodlawn","Wakefield","Mount Vernon West","Fleetwood","Bronxville","Tuckahoe","Crestwood","Scarsdale","Hartsdale","White Plains","North White Plains"]}]},{"id":"hamlue","name":"Hamburg–Lübeck","country":"🇩🇪","sub":"Deutsche Bahn","operator":"Deutsche Bahn","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"hamlue_1","name":"Hamburg Hbf → Lübeck Hbf","stops":["Hamburg Hbf","Hasselbrook","Hamburg-Wandsbek","Hamburg-Tonndorf","Hamburg-Rahlstedt","Ahrensburg","Ahrensburg-Gartenholz","Bargteheide","Kupfermühle","Bad Oldesloe","Reinfeld (Holst)","Lübeck Hbf"]}]},{"id":"munaugs","name":"München–Augsburg","country":"🇩🇪","sub":"Deutsche Bahn","operator":"Deutsche Bahn","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"munaugs_1","name":"München Hbf → Augsburg Hbf","stops":["München Hbf","München Hackerbrücke","München Donnersbergerbrücke","München Hirschgarten","München-Laim","München-Pasing","München-Langwied","München-Lochhausen","Gröbenzell","Olching","Esting","Gernlinden","Maisach","Malching (Oberbay)","Mammendorf","Haspelmoor","Althegnenberg","Mering","Mering-St Afra","Kissing","Augsburg-Hochzoll","Augsburg Haunstetterstraße","Augsburg Hbf"]}]},{"id":"hrr","name":"Hauptstrecke Rhein-Ruhr","country":"🇩🇪","sub":"Deutsche Bahn","operator":"Deutsche Bahn","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"hrr_1","name":"Duisburg → Bochum (RE)","stops":["Duisburg Hbf","Mülheim (Ruhr) Hbf","Essen Hbf","Essen-Kray Süd","Wattenscheid","Bochum Hbf"]},{"id":"hrr_2","name":"Duisburg → Bochum (S-Bahn)","stops":["Duisburg Hbf","Mülheim (Ruhr) Styrum","Mülheim (Ruhr) West","Mülheim (Ruhr) Hbf","Essen-Frohnhausen","Essen West","Essen Hbf","Essen-Steele","Essen-Steele Ost","Essen-Eiberg","Wattenscheid-Höntrop","Bochum-Ehrenfeld","Bochum Hbf"]}]},{"id":"island22","name":"Island Line 2022 (Isle of Wight)","country":"🇬🇧","sub":"South Western Railway","operator":"South Western Railway","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"island22_1","name":"Ryde Pier Head → Shanklin","stops":["Ryde Pier Head","Ryde Esplanade","Ryde St Johns Road","Smallbrook Junction","Brading","Sandown","Lake","Shanklin"]}]},{"id":"liberec","name":"Liberec–Stará Paka","country":"🇨🇿","sub":"České dráhy","operator":"České dráhy","newPack":true,"quality":"verified","note":"20 stations en haltes op basis van de spoorlijn 030 en de officiële TSW-routebeschrijving. Geen tijden ingevuld.","segments":[{"id":"liberec_1","name":"Liberec → Stará Paka","stops":["Liberec","Pilínkov","Jeřmanice","Rádlo","Rychnov u Jablonce nad Nisou","Hodkovice nad Mohelkou","Sedlejovice","Sychrov","Doubí u Turnova","Turnov","Dolánky","Malá Skála","Líšný","Železný Brod","Semily","Nedvězí","Košťálov","Libštát","Bělá u Staré Paky","Stará Paka"]}]},{"id":"mainzkob","name":"Mainz–Koblenz (Linke Rheinstrecke)","country":"🇩🇪","sub":"Deutsche Bahn","operator":"Deutsche Bahn","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"mainzkob_1","name":"Mainz Hbf → Koblenz Hbf","stops":["Mainz Hbf","Mainz-Mombach","Budenheim","Uhlerborn","Heidesheim","Ingelheim","Gau-Algesheim","Bingen-Gaulsheim","Bingen (Rhein) Stadt","Bingen (Rhein) Hbf","Trechtingshausen","Niederheimbach","Bacharach","Oberwesel","St. Goar","Boppard-Hirzenach","Boppard-Bad Salzig","Boppard Hbf","Spay","Rhens","Koblenz Hbf"]}]},{"id":"lgv","name":"LGV Méditerranée","country":"🇫🇷","sub":"SNCF","operator":"SNCF","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"lgv_1","name":"Marseille → Avignon TGV","stops":["Marseille Saint-Charles","Aix-en-Provence TGV","Avignon TGV"]}]},{"id":"lirr","name":"LIRR Commuter","country":"🇺🇸","sub":"Long Island Rail Road","operator":"Long Island Rail Road","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"lirr_1","name":"New York Penn → Hicksville","stops":["New York Penn","Woodside","Forest Hills","Kew Gardens","Jamaica","New Hyde Park","Merillon Avenue","Mineola","Carle Place","Westbury","Hicksville"]},{"id":"lirr_2","name":"New York Penn → Hempstead","stops":["New York Penn","Woodside","Forest Hills","Kew Gardens","Jamaica","Hollis","Queens Village","Bellerose","Floral Park","Stewart Manor","Nassau Boulevard","Garden City","Country Life Press","Hempstead"]},{"id":"lirr_3","name":"New York Penn → Long Beach","stops":["New York Penn","Woodside","Forest Hills","Kew Gardens","Jamaica","St. Albans","Valley Stream","Lynbrook","Centre Avenue","East Rockaway","Oceanside","Island Park","Long Beach"]},{"id":"lirr_4","name":"Atlantic Terminal → Jamaica","stops":["Atlantic Terminal","Nostrand Avenue","East New York","Jamaica"]},{"id":"lirr_5","name":"Jamaica → Belmont Park","stops":["Jamaica","Belmont Park"]}]},{"id":"londoncom","name":"London Commuter (Brighton Main Line)","country":"🇬🇧","sub":"Southern / Gatwick Express","operator":"Southern / Gatwick Express","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"londoncom_1","name":"London Victoria → Brighton","stops":["London Victoria","Battersea Park","Clapham Junction","Wandsworth Common","Balham","Streatham Common","Norbury","Thornton Heath","Selhurst","East Croydon","South Croydon","Purley Oaks","Purley","Coulsdon South","Merstham","Redhill","Earlswood","Salfords","Horley","Gatwick Airport","Three Bridges","Balcombe","Haywards Heath","Wivelsfield","Burgess Hill","Hassocks","Preston Park","Brighton"]},{"id":"londoncom_2","name":"London Victoria → Gatwick Airport","stops":["London Victoria","Clapham Junction","East Croydon","Gatwick Airport"]}]},{"id":"gospeloak","name":"Gospel Oak–Barking Riverside","country":"🇬🇧","sub":"London Overground","operator":"London Overground","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"gospeloak_1","name":"Gospel Oak → Barking Riverside","stops":["Gospel Oak","Upper Holloway","Crouch Hill","Harringay Green Lanes","South Tottenham","Blackhorse Road","Walthamstow Queen’s Road","Leyton Midland Road","Leytonstone High Road","Wanstead Park","Woodgrange Park","Barking","Barking Riverside"]}]},{"id":"mildmay","name":"Mildmay Line","country":"🇬🇧","sub":"London Overground","operator":"London Overground","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"mildmay_1","name":"Stratford → Willesden Junction","stops":["Stratford","Hackney Wick","Homerton","Hackney Central","Dalston Kingsland","Canonbury","Highbury & Islington","Caledonian Road & Barnsbury","Camden Road","Kentish Town West","Gospel Oak","Hampstead Heath","Finchley Road & Frognal","West Hampstead","Brondesbury","Brondesbury Park","Kensal Rise","Willesden Junction"]}]},{"id":"ludwig","name":"Pfälzische Ludwigsbahn","country":"🇩🇪","sub":"Deutsche Bahn","operator":"Deutsche Bahn","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"ludwig_1","name":"Mannheim → Kaiserslautern","stops":["Mannheim Hbf","Ludwigshafen (Rhein) Mitte","Ludwigshafen (Rhein) Hbf","Ludwigshafen-Mundenheim","Ludwigshafen-Rheingönheim","Limburgerhof","Schifferstadt","Böhl-Iggelheim","Haßloch (Pfalz)","Neustadt-Böbig","Neustadt (Weinstraße) Hbf","Lambrecht (Pfalz)","Neidenfels","Weidenthal","Frankenstein (Pfalz)","Hochspeyer","Kaiserslautern Hbf"]}]},{"id":"luzern","name":"Luzern–Sursee (S-Bahn Zentralschweiz)","country":"🇨🇭","sub":"SBB","operator":"SBB","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"luzern_1","name":"Luzern → Sursee","stops":["Luzern","Emmenbrücke","Emmenbrücke Gersag","Rothenburg Dorf","Rothenburg","Sempach-Neuenkirch","Nottwil","Oberkirch","Sursee"]}]},{"id":"mainsp","name":"Main-Spessart Bahn","country":"🇩🇪","sub":"Deutsche Bahn","operator":"Deutsche Bahn","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"mainsp_1","name":"Aschaffenburg → Gemünden","stops":["Aschaffenburg Hbf","Hösbach","Laufach","Heigenbrücken","Wiesthal","Partenstein","Lohr Bahnhof","Langenprozelten","Gemünden (Main)"]}]},{"id":"maintal","name":"Maintalbahn","country":"🇩🇪","sub":"Westfrankenbahn","operator":"Westfrankenbahn","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"maintal_1","name":"Aschaffenburg → Miltenberg","stops":["Aschaffenburg Hbf","Aschaffenburg Hochschule","Aschaffenburg Süd","Aschaffenburg-Orbenau","Sulzbach","Kleinwallstadt","Obernburg-Elsenfeld","Glanzstoffwerke","Erlenbach am Main","Wörth am Main","Klingenberg","Laudenbach","Kleinheubach","Miltenberg"]}]},{"id":"manairport","name":"Manchester Airport Commuter","country":"🇬🇧","sub":"Northern","operator":"Northern","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"manairport_1","name":"Manchester Piccadilly → Manchester Airport","stops":["Manchester Piccadilly","Mauldeth Road","Burnage","East Didsbury","Gatley","Heald Green","Manchester Airport"]},{"id":"manairport_2","name":"Manchester Piccadilly → Alderley Edge (Stockport)","stops":["Manchester Piccadilly","Levenshulme","Heaton Chapel","Stockport","Cheadle Hulme","Handforth","Wilmslow","Alderley Edge"]},{"id":"manairport_3","name":"Manchester Airport → Alderley Edge","stops":["Manchester Airport","Styal","Wilmslow","Alderley Edge"]}]},{"id":"medway","name":"Medway Valley Line","country":"🇬🇧","sub":"Southeastern","operator":"Southeastern","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"medway_1","name":"Strood → Tonbridge","stops":["Strood","Cuxton","Halling","Snodland","New Hythe","Aylesford","Maidstone Barracks","Maidstone West","East Farleigh","Wateringbury","Yalding","Beltring","Paddock Wood","Tonbridge"]},{"id":"medway_2","name":"Gravesend → Rainham","stops":["Gravesend","Higham","Strood","Rochester","Chatham","Gillingham","Rainham"]}]},{"id":"midland","name":"Midland Main Line","country":"🇬🇧","sub":"East Midlands Trains","operator":"East Midlands Trains","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"midland_1","name":"Leicester → Derby","stops":["Leicester","Syston","Sileby","Barrow-upon-Soar","Loughborough","East Midlands Parkway","Long Eaton","Spondon","Derby"]},{"id":"midland_2","name":"Leicester → Nottingham","stops":["Leicester","Syston","Sileby","Barrow-upon-Soar","Loughborough","East Midlands Parkway","Attenborough","Beeston","Nottingham"]}]},{"id":"mitten","name":"Mittenwaldbahn","country":"🇦🇹","sub":"ÖBB / Deutsche Bahn","operator":"ÖBB / Deutsche Bahn","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"mitten_1","name":"Innsbruck → Garmisch-Partenkirchen","stops":["Innsbruck Hbf","Innsbruck West","Innsbruck Hötting","Allerheiligenhöfe","Kranebitten","Hochzirl","Leithen","Reith","Seefeld in Tirol","Gießenbach","Scharnitz","Mittenwald","Klais","Kainzenbad","Garmisch-Partenkirchen"]}]},{"id":"morris","name":"Morristown Line","country":"🇺🇸","sub":"NJ Transit","operator":"NJ Transit","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"morris_1","name":"Hoboken → Dover","stops":["Hoboken Terminal","Newark Broad Street","East Orange","Brick Church","Orange","Highland Avenue","Mountain","South Orange","Maplewood","Millburn","Short Hills","Summit","Chatham","Madison","Convent","Morristown","Morris Plains","Mount Tabor","Denville","Dover"]},{"id":"morris_2","name":"New York Penn → Dover (via Secaucus)","stops":["New York Penn","Secaucus Junction","Newark Broad Street","East Orange","Brick Church","Orange","Highland Avenue","Mountain","South Orange","Maplewood","Millburn","Short Hills","Summit","Chatham","Madison","Convent","Morristown","Morris Plains","Mount Tabor","Denville","Dover"]}]},{"id":"nectrent","name":"NEC New York–Trenton","country":"🇺🇸","sub":"Amtrak / NJ Transit","operator":"Amtrak / NJ Transit","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"nectrent_1","name":"New York Penn → Trenton","stops":["New York Penn","Secaucus Junction","Newark Penn","Newark Liberty International Airport","North Elizabeth","Elizabeth","Linden","Rahway","Metropark","Metuchen","Edison","New Brunswick","Jersey Avenue","Princeton Junction","Hamilton","Trenton Transit Center"]}]},{"id":"nidder","name":"Niddertalbahn","country":"🇩🇪","sub":"Deutsche Bahn","operator":"Deutsche Bahn","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"nidder_1","name":"Bad Vilbel → Stockheim (1990s)","stops":["Bad Vilbel","Gronau","Niederdorfelden","Oberdorfelden","Kilianstädten","Büdesheim","Windecken","Heldenbergen-Windecken","Eichen","Höchst","Altenstadt","Lindheim","Glauberg","Stockheim"]}]},{"id":"ntp","name":"Northern Trans-Pennine","country":"🇬🇧","sub":"British Rail","operator":"British Rail","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"ntp_1","name":"Manchester Victoria → Leeds (1982)","stops":["Manchester Victoria","Miles Platting","Park","Ashton-under-Lyne","Stalybridge","Mossley","Greenfield","Marsden","Slaithwaite","Huddersfield","Deighton","Mirfield","Ravensthorpe","Dewsbury","Batley","Morley","Leeds"]}]},{"id":"rro","name":"Rhein-Ruhr Osten","country":"🇩🇪","sub":"Deutsche Bahn","operator":"Deutsche Bahn","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"rro_1","name":"Wuppertal → Hagen (RE)","stops":["Wuppertal Hbf","Wuppertal-Barmen","Wuppertal-Oberbarmen","Schwelm","Ennepetal","Hagen Hbf"]},{"id":"rro_2","name":"Wuppertal-Steinbeck → Hagen (S8)","stops":["Wuppertal-Steinbeck","Wuppertal Hbf","Wuppertal-Unterbarmen","Wuppertal-Barmen","Wuppertal-Oberbarmen","Wuppertal-Langerfeld","Schwelm West","Schwelm","Gevelsberg West","Gevelsberg-Kipp","Gevelsberg Hbf","Gevelsberg-Knapp","Hagen-Westerbauer","Hagen-Heubing","Hagen-Wehringhausen","Hagen Hbf"]}]},{"id":"riviera","name":"Riviera Line","country":"🇬🇧","sub":"Great Western Railway","operator":"Great Western Railway","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"riviera_1","name":"Exeter St Davids → Plymouth","stops":["Exeter St Davids","Exeter St Thomas","Marsh Barton","Starcross","Dawlish Warren","Dawlish","Teignmouth","Newton Abbot","Totnes","Ivybridge","Plymouth"]},{"id":"riviera_2","name":"Exeter St Davids → Paignton","stops":["Exeter St Davids","Exeter St Thomas","Marsh Barton","Starcross","Dawlish Warren","Dawlish","Teignmouth","Newton Abbot","Torre","Torquay","Paignton"]}]},{"id":"rsn","name":"Ruhr Sieg Nord","country":"🇩🇪","sub":"Deutsche Bahn","operator":"Deutsche Bahn","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"rsn_1","name":"Hagen Hbf → Finnentrop","stops":["Hagen Hbf","Hohenlimburg","Iserlohn-Letmathe","Altena (Westf)","Werdohl","Plettenberg","Finnentrop"]}]},{"id":"vorarl","name":"S-Bahn Vorarlberg","country":"🇦🇹","sub":"ÖBB","operator":"ÖBB","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"vorarl_1","name":"Lindau → Bludenz","stops":["Lindau Hbf","Lochau-Hörbranz","Bregenz-Hafen","Bregenz","Bregenz-Riedenburg","Lauterach","Wolfurt","Schwarzach in Vorarlberg","Haselstauden (Dornbirn)","Dornbirn","Dornbirn Schoren","Hatlerdorf","Hohenems","Altach","Götzis","Klaus in Vorarlberg","Sulz-Röthis","Rankweil","Feldkirch Amberg","Feldkirch","Frastanz","Schlins-Beschling","Nenzing","Ludesch","Nüziders","Bludenz"]}]},{"id":"sanbern","name":"San Bernardino Line","country":"🇺🇸","sub":"Metrolink","operator":"Metrolink","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"sanbern_1","name":"Los Angeles Union → San Bernardino","stops":["LA Union","Cal State LA","El Monte","Baldwin Park","Covina","Pomona-North","Claremont","Montclair","Upland","Rancho Cucamonga","Auto Club Speedway","Fontana","Rialto","San Bernardino–Depot","San Bernardino-Downtown"]}]},{"id":"sfaachen","name":"Schnellfahrstrecke Köln–Aachen","country":"🇩🇪","sub":"Deutsche Bahn","operator":"Deutsche Bahn","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"sfaachen_1","name":"Köln Hbf → Aachen Hbf","stops":["Köln Hbf","Köln-Hansaring","Köln-Ehrenfeld","Köln-Müngersdorf Technologiepark","Köln-Lövenich","Köln-Weiden West","Frechen-Königsdorf","Horrem","Sindorf","Buir","Merzenich","Düren","Langerwehe","Eschweiler Hbf","Stolberg (Rheinl) Hbf","Eilendorf","Aachen-Rothe Erde","Aachen Hbf"]}]},{"id":"kasswurz","name":"Kassel–Würzburg","country":"🇩🇪","sub":"Deutsche Bahn","operator":"Deutsche Bahn","newPack":true,"quality":"verified","note":"Alle reguliere reizigersstations van de TSW-hogesnelheidsroute; goederensporen zijn geen haltes.","segments":[{"id":"kasswurz_1","name":"Kassel-Wilhelmshöhe → Würzburg Hbf (ICE)","stops":["Kassel-Wilhelmshöhe","Fulda","Würzburg Hbf"]}]},{"id":"semmer","name":"Semmeringbahn","country":"🇦🇹","sub":"ÖBB","operator":"ÖBB","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"semmer_1","name":"Wiener Neustadt → Mürzzuschlag","stops":["Wiener Neustadt Hbf","St. Egyden","Neunkirchen NÖ","Ternitz","Pottschach","Gloggnitz","Schlöglmühl","Payerbach-Reichenau","Küb","Eichberg","Klamm-Schottwien","Breitenstein","Wolfsbergkogel","Semmering","Steinhaus am Semmering","Spital am Semmering","Mürzzuschlag"]}]},{"id":"sehs","name":"Southeastern High Speed Extended","country":"🇬🇧","sub":"Southeastern","operator":"Southeastern","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"sehs_1","name":"London St Pancras → Ashford International (HS1)","stops":["London St Pancras","Stratford International","Ebbsfleet International","Ashford International"]},{"id":"sehs_2","name":"London St Pancras → Faversham","stops":["London St Pancras","Stratford International","Ebbsfleet International","Gravesend","Higham","Strood","Rochester","Chatham","Gillingham","Rainham","Newington","Sittingbourne","Teynham","Faversham"]},{"id":"sehs_3","name":"Dartford → Faversham (North Kent)","stops":["Dartford","Stone Crossing","Greenhithe","Swanscombe","Northfleet","Gravesend","Higham","Strood","Rochester","Chatham","Gillingham","Rainham","Newington","Sittingbourne","Teynham","Faversham"]}]},{"id":"zwgron","name":"Zwolle–Groningen","country":"🇳🇱","sub":"Nederlandse Spoorwegen","operator":"Nederlandse Spoorwegen","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"zwgron_1","name":"Zwolle → Groningen","stops":["Zwolle","Meppel","Hoogeveen","Beilen","Assen","Haren","Groningen Europapark","Groningen"]}]},{"id":"tees","name":"Tees Valley Line","country":"🇬🇧","sub":"British Rail","operator":"British Rail","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"tees_1","name":"Darlington → Saltburn","stops":["Darlington","Dinsdale","Teesside Airport","Allens West","Eaglescliffe","Thornaby","Middlesbrough","South Bank","British Steel Redcar","Redcar Central","Redcar East","Longbeck","Marske","Saltburn"]}]},{"id":"dreschem","name":"Dresden–Chemnitz (Tharandter Rampe)","country":"🇩🇪","sub":"Deutsche Bahn","operator":"Deutsche Bahn","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"dreschem_1","name":"Dresden Hbf → Chemnitz Hbf","stops":["Dresden Hbf","Dresden-Plauen","Freital-Potschappel","Freital-Deuben","Freital-Hainsberg","Freital-Hainsberg West","Tharandt","Edle Krone","Klingenberg-Colmnitz","Niederbobritzsch","Muldenhütten","Freiberg (Sachs)","Kleinschirma","Frankenstein (Sachs)","Oederan","Falkenau (Sachs) Süd","Flöha","Niederwiesa","Chemnitz-Hilbersdorf","Chemnitz Hbf"]}]},{"id":"prestoncar","name":"Preston–Carlisle","country":"🇬🇧","sub":"British Rail","operator":"British Rail","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"prestoncar_1","name":"Preston → Carlisle","stops":["Preston","Lancaster","Oxenholme Lake District","Penrith North Lakes","Carlisle"]},{"id":"prestoncar_2","name":"Lancaster → Morecambe","stops":["Lancaster","Bare Lane","Morecambe"]},{"id":"prestoncar_3","name":"Lancaster → Carnforth","stops":["Lancaster","Carnforth"]}]},{"id":"westcorn","name":"West Cornwall Local","country":"🇬🇧","sub":"British Rail","operator":"British Rail","newPack":true,"quality":"verified","note":"Trajecten zonder tijden. Maak zelf je dienstregeling.","segments":[{"id":"westcorn_1","name":"Penzance → St Austell","stops":["Penzance","St Erth","Hayle","Camborne","Redruth","Truro","St Austell"]},{"id":"westcorn_2","name":"St Erth → St Ives","stops":["St Erth","Lelant Saltings","Lelant","Carbis Bay","St Ives"]}]}];
 DEFAULTS.push(...EXTRA_ROUTES);
@@ -598,6 +713,22 @@ const EXTRA_ROUTE_META=(function(){
   };
 })();
 Object.assign(ROUTE_META,EXTRA_ROUTE_META);
+// Heldere bestemming- en vervoerdersnamen in het vertrekbord (geen officieel logo).
+const CARRIER_LABELS={
+ edglas:['SCOTRAIL','ScotRail'],fife:['SCOTRAIL','ScotRail'],cathcart:['SCOTRAIL','ScotRail'],
+ cardiff:['TRANSPORT FOR WALES','Transport for Wales'],gwe:['GWR','Great Western Railway'],
+ manairport:['NORTHERN','Northern'],glossop:['NORTHERN','Northern'],blackpool:['NORTHERN','Northern'],
+ sehs:['SOUTHEASTERN','Southeastern'],medway:['SOUTHEASTERN','Southeastern'],
+ londoncom:['SOUTHERN','Southern / Thameslink'],birm:['WEST MIDLANDS','West Midlands Trains'],
+ gospeloak:['OVERGROUND','London Overground'],mildmay:['OVERGROUND','London Overground'],
+ harlem:['METRO-NORTH','Metro-North Railroad'],lirr:['LIRR','Long Island Rail Road'],
+ morris:['NJ TRANSIT','NJ Transit'],nectrent:['NJ TRANSIT','NJ Transit / Amtrak'],
+ sanbern:['METROLINK','Metrolink'],bostwor:['MBTA','MBTA Commuter Rail'],
+ bernina:['RhB','Rhätische Bahn'],zwgron:['NS / ARRIVA','NS / Arriva'],
+ bremen:['REGIONALVERKEHR','DB / Press Eisenbahn'],
+ lgv:['TGV','SNCF']
+};
+for(const [key,names] of Object.entries(CARRIER_LABELS)){if(ROUTE_META[key]){ROUTE_META[key].badge=names[0];ROUTE_META[key].operator=names[1];}}
 function prepRoutes(routes){return (routes||[]).map(r=>({...r,segments:(r.segments||[]).map(s=>({...s,id:s.id||uid(),stops:Array.isArray(s.stops)?s.stops:[...(String(s.stops||'').split('|').map(v=>v.trim()).filter(Boolean))]}))}));}
 function migrate(raw){
   const base={routes:prepRoutes(DEFAULTS),selectedRoute:'ecw',selectedSegment:null,services:[],trip:null,stationStories:{},trackFacts:{}};
@@ -609,11 +740,12 @@ function migrate(raw){
 
   data.stationStories=data.stationStories && typeof data.stationStories==='object' && !Array.isArray(data.stationStories) ? data.stationStories : {};
   data.trackFacts=data.trackFacts && typeof data.trackFacts==='object' && !Array.isArray(data.trackFacts) ? data.trackFacts : {};
-  data.services=Array.isArray(data.services)?data.services.filter(s=>s&&s.code&&s.routeId&&s.segmentId&&Array.isArray(s.stops)).map(s=>({...s,id:s.id||uid(),stops:s.stops.map(st=>({name:String(st.name||''),arr:st.arr||'',dep:st.dep||''}))})) : [];
+  data.services=Array.isArray(data.services)?data.services.filter(s=>s&&s.code&&s.routeId&&s.segmentId&&Array.isArray(s.stops)).map(s=>({...s,id:s.id||uid(),equipment:String(s.equipment||''),stops:s.stops.map(st=>({name:String(st.name||''),arr:st.arr||'',dep:st.dep||'',arrPlatform:String(st.arrPlatform||'').slice(0,12)}))})) : [];
   if(data.trip&&Array.isArray(data.trip.stops)){
      // Oude versies openden ritten meteen in de machinistenmodus.
      if(typeof data.trip.started !== 'boolean') data.trip.started=true;
-    data.trip.stops=data.trip.stops.map(st=>({name:String(st.name||''),arr:st.arr||'',dep:st.dep||'',actualArr:st.actualArr||'',actualDep:st.actualDep||''}));
+    data.trip.equipment=String(data.trip.equipment||'');
+    data.trip.stops=data.trip.stops.map(st=>({name:String(st.name||''),arr:st.arr||'',dep:st.dep||'',actualArr:st.actualArr||'',actualDep:st.actualDep||'',arrPlatform:String(st.arrPlatform||'').slice(0,12)}));
   }
   ensureSelection(data);
   if(data.trip && data.trip.code) syncService(data,data.trip);
@@ -645,16 +777,73 @@ function monitorStyle(t){
  const type=String(t.segment||'').match(/\b(?:S\d{1,2}|RE\d{1,2}|RB\d{1,2}|ICE|IC)\b/i);
  return {...base,dark:base.theme,light:'#eaf4fb',line:type?type[0].toUpperCase():'RAIL'};
 }
+
+// Korte, zorgvuldig geselecteerde spoorfeiten met bron. Eigen teksten hebben altijd voorrang.
+const CURATED_STATIONS={
+ 'ecw::brighton':{text:'Brighton kreeg op 11 mei 1840 een station voor de lijn naar Shoreham. Het station werd uitgebreid voor de spoorverbinding met Londen, die in september 1841 opende.',source:'https://www.mybrightonandhove.org.uk/places/placetrans-2/brighton-station/brighton-station-2',label:'Historische bron'},
+ 'ecw::lewes':{text:'De spoorlijn Brighton–Lewes opende op 8 juni 1846. Door latere aansluitingen groeide Lewes uit tot een belangrijk knooppunt in Sussex.',source:'https://www.mybrightonandhove.org.uk/places/placetrans-2/brighton-station/brighton-station-3',label:'Historische bron'},
+ 'wcml::london euston':{text:'London Euston opende op 20 juli 1837 en was het eerste grote hoofdlijnstation van Londen. Het station werd in de jaren zestig ingrijpend vernieuwd.',source:'https://www.networkrail.co.uk/who-we-are/our-history/iconic-infrastructure/the-history-of-london-euston-station/',label:'Network Rail'},
+ 'rapid::leipzig markt':{text:'Het ondergrondse station Leipzig Markt ging in december 2013 open met de City-Tunnel. De reguliere dienst begon op 15 december 2013.',source:'https://www.citytunnelleipzig.info/hs-markt.php',label:'City-Tunnel Leipzig'}
+};
+const CURATED_ROUTES={
+ 'ecw':{text:'De spoorverbinding tussen Brighton en Lewes werd in 1846 geopend. Het traject is een van de vroege verbindingen van de zuidkust van Engeland.',source:'https://www.mybrightonandhove.org.uk/places/placetrans-2/brighton-station/brighton-station-3',label:'Historische bron'},
+ 'bernina':{text:'De Albula- en Berninalijnen van de Rhätische Bahn staan sinds 2008 op de UNESCO-Werelderfgoedlijst vanwege hun uitzonderlijke bergspoorwegbouw.',source:'https://whc.unesco.org/en/list/1276',label:'UNESCO'},
+ 'fife':{text:'De Forth Bridge tussen Edinburgh en Fife opende in 1890. De beroemde stalen cantileverbrug staat op de UNESCO-Werelderfgoedlijst.',source:'https://whc.unesco.org/en/list/1485',label:'UNESCO'},
+ 'wcml':{text:'Het oorspronkelijke London Euston, beginpunt van de West Coast Main Line, opende in 1837. In de jaren 1960 werd het station herbouwd tijdens de elektrificatie.',source:'https://www.networkrail.co.uk/who-we-are/our-history/iconic-infrastructure/the-history-of-london-euston-station/',label:'Network Rail'},
+ 'rapid':{text:'De Leipzig City-Tunnel met de halte Markt opende in december 2013 en verbindt de spoorlijnen aan beide kanten van Leipzig via het centrum.',source:'https://www.citytunnelleipzig.info/hs-markt.php',label:'City-Tunnel Leipzig'}
+};
+function infoEntry(kind,routeId,name,other){
+ const key=kind==='station'?stationKey(routeId,name):trackKey(routeId,name,other);
+ const saved=String((kind==='station'?state.stationStories:state.trackFacts)?.[key]||'').trim();
+ if(saved)return {text:saved,source:'',label:'Eigen tekst',own:true};
+ if(kind==='station'&&CURATED_STATIONS[key])return {...CURATED_STATIONS[key],own:false};
+ return null;
+}
+function srcLink(entry){return entry?.source?` <a class="story-source" href="${esc(entry.source)}" target="_blank" rel="noopener noreferrer">Bron: ${esc(entry.label||'bekijk bron')} ↗</a>`:'';}
+function equipmentSuggestions(routeId){
+ const byRoute={ecw:['Class 377 Electrostar','Class 313'],airedale:['Class 333'],frankfurt:['DB BR 430'],nuernberg:['ICE 4','DB BR 442'],trirail:['Tri-Rail locomotief'],rapid:['Talent 2 BR 442'],boston:['MBTA F40PH-3C','Amtrak ACS-64'],wcml:['Class 350 Desiro','Class 390 Pendolino'],bernina:['RhB ABe 8/12 Allegra'],lirr:['LIRR M7','LIRR M9'],gwe:['Class 43 HST','Class 166'],island22:['Class 484'],zwgron:['NS ICM Koploper','NS SNG','Arriva GTW'],sehs:['Class 395 Javelin'],lgv:['TGV Duplex'],cathcart:['Class 314'],fife:['Class 170 Turbostar'],sanbern:['Metrolink EMD F125']};
+ return byRoute[routeId]||[];
+}
+// Bij een duidelijk herkend treintype gebruiken we een bronvermelde échte foto.
+// Nooit een niet-overeenkomende foto tonen bij onbekend materieel.
+const EQUIPMENT_KNOWN=[
+ {pattern:/\bclass\s*377\b/i,name:'Class 377 Electrostar',description:'Brits elektrisch treinstel uit de Electrostar-familie van Bombardier, gebruikt door Southern en andere vervoerders in Zuid-Engeland.',meta:'ecw',source:'https://en.wikipedia.org/wiki/British_Rail_Class_377'},
+ {pattern:/\b(?:br\s*442|talent\s*2)\b/i,name:'BR 442 Talent 2',description:'Modulair elektrisch treinstel van Bombardier voor regionale en S-Bahn-diensten in Duitsland.',meta:'rapid',source:'https://infoportal.mobil.nrw/technik/spnv-fahrzeuge/elektrotriebwagen-br-442-talent-2.html'},
+ {pattern:/\bice\s*4\b/i,name:'ICE 4',description:'Modulaire hogesnelheidstrein van Siemens Mobility voor DB Fernverkehr, sinds 2017 in de reguliere dienst.',meta:'nuernberg',source:'https://www.bahn.de/service/ueber-uns/zugtypen/ice-4'},
+ {pattern:/\b(?:class\s*390|pendolino)\b/i,name:'Class 390 Pendolino',description:'Kantelbare elektrische intercity voor de Britse West Coast Main Line.',meta:'wcml',source:'https://www.gbtrains.uk/stock/390/'},
+ {pattern:/\b(?:lirr\s*)?m7\b/i,name:'LIRR M7',description:'Elektrisch treinstel van de Long Island Rail Road. De M7-serie rijdt in het voorstadsverkeer van New York.',meta:'lirr',source:'https://commons.wikimedia.org/wiki/File:LIRR_M7.jpg'},
+ {pattern:/\bclass\s*333\b/i,name:'Class 333',description:'Elektrisch treinstel dat wordt ingezet in het gebied Leeds–Skipton–Ilkley.',meta:'airedale',source:'https://commons.wikimedia.org/wiki/File:Northern_class_333_electric_multiple_unit_at_Ilkley_-_geograph.org.uk_-_7808110.jpg'}
+];
+function matchingEquipment(name){const raw=String(name||'').trim();return raw?EQUIPMENT_KNOWN.find(e=>e.pattern.test(raw))||null:null;}
+function equipmentInfoHtml(name){
+ const e=matchingEquipment(name);if(!e)return '';
+ const photo=routeMeta(e.meta);
+ return `<div class="equipment-info-card"><img src="${esc(photo.image)}" loading="lazy" onerror="this.remove()" alt="Echte foto van ${esc(e.name)}"/><div><strong>${esc(e.name)}</strong><p>${esc(e.description)}</p><div class="equipment-sources"><a href="${esc(e.source)}" target="_blank" rel="noopener noreferrer">Materieelinformatie ↗</a> · <a href="${esc(photo.source)}" target="_blank" rel="noopener noreferrer">Foto: ${esc(photo.author)} (${esc(photo.license)}) ↗</a></div></div></div>`;
+}
+function updateEquipment(raw){const t=trip();if(!t)return;t.equipment=String(raw||'').trim().slice(0,90);syncService();save();const preview=$('equipmentPreview');if(preview)preview.innerHTML=equipmentInfoHtml(t.equipment);toast(t.equipment?'Materieel opgeslagen':'Materieel leeg gelaten');}
 function stationKey(routeId,name){return routeId+'::'+String(name||'').trim().toLowerCase();}
 function trackKey(routeId,from,to){let a=[String(from||'').trim().toLowerCase(),String(to||'').trim().toLowerCase()].sort();return routeId+'::'+a.join('↔');}
 function routeForInfo(){let t=trip(); if(t && storyFromTrip) return {routeId:t.routeId,segment:t.segment,stops:t.stops.map(st=>st.name)};let r=currentRoute(),s=currentSeg();return {routeId:r.id,segment:s?.name||'',stops:s?.stops||[]};}
 let storyFromTrip=false;
-function infoForDriver(t){const here=t.stops[t.index],next=t.stops[Math.min(t.index+1,t.stops.length-1)];
+function infoForDriver(t){
+ const here=t.stops[t.index],next=t.stops[Math.min(t.index+1,t.stops.length-1)];
  const at=t.phase==='station',name=at?here?.name:next?.name;
- const story=at?state.stationStories?.[stationKey(t.routeId,here?.name)]:state.trackFacts?.[trackKey(t.routeId,here?.name,next?.name)];
- const label=at?'Stationsverhaal':'Bijzonder onderweg';
- const content=String(story||'').trim();
- return `<section class="info-note"><div class="info-icon">${at?'⌂':'◈'}</div><div class="text"><strong>${label}${name?' · '+esc(name):''}</strong>${content?esc(content.length>185?content.slice(0,185)+'…':content):'Nog geen informatie ingevoerd voor dit station of baanvak.'}</div><button class="btn ghost sm" data-act="open-stories" data-trip="1">Bekijk</button></section>`;
+ const e=at?infoEntry('station',t.routeId,here?.name):infoEntry('track',t.routeId,here?.name,next?.name);
+ const routeFact=!e?CURATED_ROUTES[t.routeId]:null;
+ const entry=e||routeFact;
+ const label=e?(at?'Stationsverhaal':'Bijzonder onderweg'):(routeFact?'Wist je dat · over de route':'Stations- en baanvakverhalen');
+ const content=entry?.text||'Nog geen verhaal voor deze halte of dit baanvak. Je kunt er zelf een toevoegen.';
+ return `<section class="info-note driver-story-card"><div class="info-icon">${e&&at?'⌂':'◈'}</div><div class="text"><strong>${label}${e&&name?' · '+esc(name):''}</strong>${esc(content.length>210?content.slice(0,210)+'…':content)}${srcLink(entry)}</div><div class="driver-story-actions"><button class="btn ghost sm" data-act="story-detail">Lees meer</button><button class="btn ghost sm" data-act="open-stories" data-trip="1">Bibliotheek</button></div></section>`;
+}
+function showStoryDetail(){
+ const t=trip();if(!t)return;
+ const here=t.stops[t.index],next=t.stops[Math.min(t.index+1,t.stops.length-1)],at=t.phase==='station';
+ const e=at?infoEntry('station',t.routeId,here.name):infoEntry('track',t.routeId,here.name,next.name);
+ const fact=e||CURATED_ROUTES[t.routeId];
+ $('modalTitle').textContent=e?(at?'Stationsverhaal · '+here.name:'Baanvak · '+here.name+' → '+next.name):'Over '+t.route;
+ $('modalBody').innerHTML=`<p style="white-space:pre-wrap;line-height:1.75">${esc(fact?.text||'Voor deze locatie is nog geen geverifieerde informatie ingevuld.')}</p><p class="tiny muted">${fact?.own?'Eigen tekst uit jouw bibliotheek':fact?.source?'Geverifieerde achtergrondinformatie · '+srcLink(fact):'Voeg zelf informatie toe via de routebibliotheek.'}</p>`;
+ $('modalButtons').innerHTML='<button class="btn primary" data-act="close-modal">Sluiten</button>';
+ $('modalBack').classList.remove('hide');
 }
 
 function boot(){try{return migrate(JSON.parse(localStorage.getItem(KEY)))}catch(e){return migrate(null)}}
@@ -686,7 +875,7 @@ function gameSecs(){
  return (initial+elapsed)%86400;
 }
 function gameText(){const s=gameSecs(); return s===null?'--:--:--':fmt(s)}
-function syncService(dataObj=state,t=dataObj.trip){ if(!t||!String(t.code||'').trim()) return; const code=String(t.code).trim(); let item=(dataObj.services||[]).find(s=>s.id===t.serviceId)||(dataObj.services||[]).find(s=>s.routeId===t.routeId&&s.segmentId===t.segmentId&&cleanCode(s.code)===cleanCode(code)); const now=new Date().toISOString(); if(!item){ item={id:uid(),routeId:t.routeId,segmentId:t.segmentId,code,stops:[],createdAt:now}; dataObj.services.push(item); } item.routeId=t.routeId; item.segmentId=t.segmentId; item.code=code; item.updatedAt=now; item.stops=t.stops.map(st=>({name:st.name,arr:st.arr||'',dep:st.dep||''})); t.serviceId=item.id; }
+function syncService(dataObj=state,t=dataObj.trip){ if(!t||!String(t.code||'').trim()) return; const code=String(t.code).trim(); let item=(dataObj.services||[]).find(s=>s.id===t.serviceId)||(dataObj.services||[]).find(s=>s.routeId===t.routeId&&s.segmentId===t.segmentId&&cleanCode(s.code)===cleanCode(code)); const now=new Date().toISOString(); if(!item){ item={id:uid(),routeId:t.routeId,segmentId:t.segmentId,code,stops:[],createdAt:now}; dataObj.services.push(item); } item.routeId=t.routeId; item.segmentId=t.segmentId; item.code=code; item.equipment=String(t.equipment||''); item.updatedAt=now; item.stops=t.stops.map(st=>({name:st.name,arr:st.arr||'',dep:st.dep||'',arrPlatform:String(st.arrPlatform||'').slice(0,12)})); t.serviceId=item.id; }
 function beginTrip(serviceId){
    const route=currentRoute(), seg=currentSeg();
    if(!route||!seg||seg.stops.length<2) return toast('Kies eerst een geldig traject.');
@@ -696,10 +885,10 @@ function beginTrip(serviceId){
    const code=String(chosen?.code || $('code')?.value || '').trim();
    if(trip() && !trip().finished && !confirm('Je hebt al een actieve rit. Wil je een nieuwe dienst voorbereiden?'))return;
    const existing=chosen || serviceFor(route.id,seg.id,code);
-   const stops=(existing?existing.stops:seg.stops.map(name=>({name,arr:'',dep:''})))
-      .map(st=>({name:st.name,arr:st.arr||'',dep:st.dep||'',actualArr:'',actualDep:''}));
+   const stops=(existing?existing.stops:seg.stops.map(name=>({name,arr:'',dep:'',arrPlatform:''})))
+      .map(st=>({name:st.name,arr:st.arr||'',dep:st.dep||'',arrPlatform:String(st.arrPlatform||'').slice(0,12),actualArr:'',actualDep:''}));
    state.trip={id:uid(),routeId:route.id,route:route.name,segmentId:seg.id,
-     segment:seg.name,code,serviceId:existing?.id||null,stops,index:0,phase:'station',
+     segment:seg.name,code,equipment:String(existing?.equipment||''),serviceId:existing?.id||null,stops,index:0,phase:'station',
      started:false,finished:false,clock:{value:'',at:null,running:false},
      createdAt:new Date().toISOString()};
    syncService();save();view='prepare';render();window.scrollTo(0,0);
@@ -711,8 +900,8 @@ function chooseSegmentAndPrepare(id){
 function usePreparedService(id){
   const t=trip(),s=state.services.find(x=>x.id===id);
   if(!t||!s||t.started||s.routeId!==t.routeId||s.segmentId!==t.segmentId)return;
-  t.serviceId=s.id;t.code=s.code;
-  t.stops=s.stops.map(st=>({name:st.name,arr:st.arr||'',dep:st.dep||'',actualArr:'',actualDep:''}));
+  t.serviceId=s.id;t.code=s.code;t.equipment=String(s.equipment||'');
+  t.stops=s.stops.map(st=>({name:st.name,arr:st.arr||'',dep:st.dep||'',arrPlatform:String(st.arrPlatform||'').slice(0,12),actualArr:'',actualDep:''}));
   save();render();toast('Opgeslagen dienst geladen');
 }
 function updatePreparedCode(){
@@ -888,6 +1077,14 @@ function changeTimeBy(seconds){
  input.value=fmt(sec(candidate)+seconds);
 }
 function usePreviousTime(){if(!activeTimeCell)return;const prev=previousTime(activeTimeCell.index,activeTimeCell.field);if(prev)$('timeMenuInput').value=prev.time;}
+function saveArrivalPlatform(index,raw){
+ const t=trip(),i=Number(index);
+ if(!t||!Number.isInteger(i)||i<0||i>=t.stops.length)return;
+ const platform=String(raw??'').trim().slice(0,12);
+ if(t.stops[i].arrPlatform===platform)return;
+ t.stops[i].arrPlatform=platform;
+ syncService();save();
+}
 function saveTimeCell(continueNext=false){
  if(!activeTimeCell)return;
  const t=trip();if(!t)return;
@@ -915,8 +1112,50 @@ function renderHome(){
 }
 function gameTimeFor(st,idx){return (idx===0?st.dep:(st.arr||st.dep))||'—';}
 function prepTimeRows(t){
- return `<div class="prep-time-head"><span>STATION</span><span>AANKOMST</span><span>VERTREK</span></div>
- ${t.stops.map((st,i)=>`<div class="prep-time-row"><div class="prep-stop"><span class="prep-stop-num">${String(i+1).padStart(2,'0')}</span><span>${esc(st.name)}</span></div><button class="timepicker-field ${st.arr?'':'empty'}" data-act="edit-time" data-index="${i}" data-field="arr" aria-label="Aankomsttijd ${esc(st.name)} aanpassen">${esc(st.arr||'—')} <span class="pencil">✎</span></button><button class="timepicker-field ${st.dep?'':'empty'}" data-act="edit-time" data-index="${i}" data-field="dep" aria-label="Vertrektijd ${esc(st.name)} aanpassen">${esc(st.dep||'—')} <span class="pencil">✎</span></button></div>`).join('')}`;
+ return `<div class="prep-time-head"><span>STATION</span><span>AANKOMST</span><span>VERTREK</span><span>SPOOR AANK.</span></div>
+ ${t.stops.map((st,i)=>`<div class="prep-time-row"><div class="prep-stop"><span class="prep-stop-num">${String(i+1).padStart(2,'0')}</span><span>${esc(st.name)}</span></div><button class="timepicker-field ${st.arr?'':'empty'}" data-act="edit-time" data-index="${i}" data-field="arr" aria-label="Aankomsttijd ${esc(st.name)} aanpassen">${esc(st.arr||'—')} <span class="pencil">✎</span></button><button class="timepicker-field ${st.dep?'':'empty'}" data-act="edit-time" data-index="${i}" data-field="dep" aria-label="Vertrektijd ${esc(st.name)} aanpassen">${esc(st.dep||'—')} <span class="pencil">✎</span></button><input class="prep-track-input" data-arr-platform="${i}" type="text" maxlength="12" autocomplete="off" placeholder="—" aria-label="Spoor bij aankomst op ${esc(st.name)}" value="${esc(st.arrPlatform||'')}" /></div>`).join('')}`;
+}
+
+function openBulkTimes(){
+ const t=trip();if(!t)return;
+ $('modalTitle').textContent='Snel diensttijden plakken';
+ $('modalBody').innerHTML=`<p class="muted tiny">Plak maximaal ${t.stops.length} regels, vanaf het eerste station. Gebruik tabs of puntkomma’s tussen <b>aankomst ; vertrek ; spoor</b>. Optioneel mag de stationsnaam als eerste kolom staan. Gebruik HH:MM of HH:MM:SS. Lege velden blijven ongewijzigd.</p><textarea id="bulkInput" rows="10" spellcheck="false" placeholder="08:10;08:12;2\n08:18;08:19;4B\n08:27;08:29;1"></textarea><p class="muted tiny">Niets wordt toegepast als een regel ongeldig is. Je bestaande diensten worden niet overschreven, alleen deze gekozen dienst wordt bijgewerkt.</p>`;
+ $('modalButtons').innerHTML='<button class="btn ghost" data-act="close-modal">Annuleren</button><button class="btn primary" data-act="apply-bulk-times">Tijden toepassen</button>';
+ $('modalBack').classList.remove('hide');
+}
+function applyBulkTimes(){
+ const t=trip();if(!t)return;
+ const rows=String($('bulkInput')?.value||'').trim().split(/\r?\n/).filter(v=>v.trim());
+ if(!rows.length)return toast('Plak eerst één of meer regels.');
+ if(rows.length>t.stops.length)return toast('Meer regels dan stations.');
+ const updates=[];
+ for(let i=0;i<rows.length;i++){
+   const cols=rows[i].split(rows[i].includes('\t')?'\t':';').map(x=>x.trim());
+   if(cols.length<2||cols.length>4)return toast('Regel '+(i+1)+': verwacht aankomst;vertrek;spoor.');
+   const prefix=cols.length===4||(!cols[0]&&cols.length===4)?cols.shift():null;
+   if(prefix && prefix.toLocaleLowerCase('nl')!==t.stops[i].name.toLocaleLowerCase('nl'))return toast('Regel '+(i+1)+': stationsnaam wijkt af.');
+   if(cols.length===2)cols.push('');
+   if(cols.length!==3)return toast('Regel '+(i+1)+': ongeldige kolommen.');
+   const [arr,dep,platform]=cols;
+   if(arr&&!norm(arr))return toast('Regel '+(i+1)+': ongeldige aankomsttijd.');
+   if(dep&&!norm(dep))return toast('Regel '+(i+1)+': ongeldige vertrektijd.');
+   if(platform.length>12)return toast('Regel '+(i+1)+': spoor is te lang.');
+   updates.push({arr:arr?norm(arr):null,dep:dep?norm(dep):null,platform:platform||null});
+ }
+ updates.forEach((u,i)=>{const st=t.stops[i];if(u.arr!==null)st.arr=u.arr;if(u.dep!==null)st.dep=u.dep;if(u.platform!==null)st.arrPlatform=u.platform;});
+ syncService();save();closeModal();render();toast(rows.length+' stations bijgewerkt');
+}
+function openShiftTimes(){
+ $('modalTitle').textContent='Alle geplande tijden verschuiven';
+ $('modalBody').innerHTML='<p class="muted tiny">Verschuif alleen ingevulde aankomst- en vertrektijden van de huidige dienst. Werkelijk geregistreerde tijden en sporen blijven ongewijzigd.</p><div class="field"><label for="shiftMinutes">Aantal minuten (negatief mag)</label><input id="shiftMinutes" type="number" value="15" min="-1440" max="1440" step="1" /></div><div class="wrap"><button class="btn ghost sm" data-act="shift-preset" data-value="-30">−30 min</button><button class="btn ghost sm" data-act="shift-preset" data-value="-15">−15 min</button><button class="btn ghost sm" data-act="shift-preset" data-value="5">+5 min</button><button class="btn ghost sm" data-act="shift-preset" data-value="15">+15 min</button><button class="btn ghost sm" data-act="shift-preset" data-value="30">+30 min</button></div>';
+ $('modalButtons').innerHTML='<button class="btn ghost" data-act="close-modal">Annuleren</button><button class="btn primary" data-act="apply-shift">Tijden verschuiven</button>';
+ $('modalBack').classList.remove('hide');
+}
+function shiftTripTimes(minutes){
+ const t=trip();if(!t)return;
+ if(!Number.isInteger(minutes)||Math.abs(minutes)>1440||minutes===0)return toast('Vul een geheel aantal minuten in tussen −1440 en +1440.');
+ for(const st of t.stops){for(const key of ['arr','dep']){const v=sec(st[key]);if(v!==null)st[key]=fmt(v+minutes*60);}}
+ syncService();save();closeModal();render();toast('Alle ingevulde tijden '+(minutes>0?'+':'')+minutes+' minuten');
 }
 function renderPrepare(){
  const t=trip();if(!t){view='home';return renderHome();}
@@ -927,8 +1166,8 @@ function renderPrepare(){
  const status=t.started?'RIT ACTIEF · INSTELLINGEN':'STAP 2 VAN 3 · VOORBEREIDING';
  return `<div class="new-workflow"><div class="workflow-head"><div><div class="eyebrow">${status}</div><h1>Maak je klaar voor vertrek</h1><div class="workflow-sub">${esc(t.route)} <span>→</span> ${esc(t.segment)}</div></div><div class="workflow-tools"><span class="workflow-stage"><b>01</b> Route <i></i> <b class="active">02</b> Voorbereiden <i></i> <b>03</b> Rijden</span><button class="btn ghost sm" data-act="home">← Routes</button></div></div>
  <div class="prep-grid"><div class="prep-left"><section class="prep-clock-panel"><div class="prep-panel-label">SYNCHRONISEREN MET TRAIN SIM WORLD</div><div class="prep-clock-label">HUIDIGE GAMETIJD</div><div class="prep-bigclock" id="prepClockNow">${gameText()}</div><div class="prep-clock-status">${clock===null?'<span class="unsynced-dot"></span> Nog niet gesynchroniseerd':(t.started?'<span class="synced-dot"></span> Spelklok loopt tijdens de rit':'<span class="paused-dot"></span> Klaargezet · klok start op machinistenscherm')}</div><div class="field prep-clock-field"><label for="gameclock">Tijd in TSW (uu:mm:ss)</label><input id="gameclock" inputmode="numeric" maxlength="8" placeholder="Bijv. 08:43:20" value="${esc(gameText()==='--:--:--'?'':gameText())}" /></div><div class="wrap"><button class="btn primary" data-act="sync">↻ Gelijkzetten</button><button class="btn ghost" data-act="device-time" title="Alleen als de spelklok gelijk loopt met de apparaattijd">Gebruik apparaattijd</button></div><div class="prep-hint">${t.started?'De klok loopt al. Gelijkzetten tijdens de rit past de lopende spelklok aan.':'Zet hier de gametijd van je PS5 klaar. De klok blijft hier stilstaan. Op het machinistenscherm start de afteller; het vertrek bevestig je daar apart.'}</div></section>
- <section class="prep-brief-panel"><div class="prep-panel-label">GESELECTEERDE DIENST</div><div class="prep-brief-route">${esc(t.stops[0]?.name||'—')} <span>→</span> ${esc(t.stops[t.stops.length-1]?.name||'—')}</div><div class="prep-summary-stats"><div><small>HALTES</small><strong>${t.stops.length}</strong></div><div><small>EERSTE VERTREK</small><strong>${esc(t.stops[0]?.dep||'—')}</strong></div><div><small>VERTREK OVER</small><strong id="prepCountdown">${countdown(remain)}</strong></div></div><div class="field"><label for="prepCode">Dienstcode (optioneel)</label><div class="prep-code-row"><input id="prepCode" value="${esc(t.code||'')}" placeholder="Bijv. RE10 58219" /><button class="btn ghost" data-act="save-prep-code">Bewaren</button></div></div>${services.length&&!t.started?`<div class="field" style="margin-bottom:0"><label for="preService">Of laad een opgeslagen dienst</label><select id="preService"><option value="">Kies een dienst…</option>${services.map(s=>`<option value="${esc(s.id)}" ${s.id===t.serviceId?'selected':''}>${esc(s.code)}</option>`).join('')}</select></div>`:''}</section></div>
- <section class="prep-editor"><div class="prep-editor-top"><div><div class="prep-panel-label">DIENSTREGELING</div><h2>Halte- en vertrektijden</h2><p>Tik op een tijd om hem te wijzigen. Alle tijden, inclusief seconden, worden in je dienst opgeslagen.</p></div><span class="prep-count">${t.stops.length} haltes</span></div><div class="prep-rows">${prepTimeRows(t)}</div><div class="prep-editor-foot">Snelle correcties: ±1 sec · ±30 sec · ±1 / 2 / 5 min. De wijzigingen worden direct opgeslagen.</div></section></div>
+ <section class="prep-brief-panel"><div class="prep-panel-label">GESELECTEERDE DIENST</div><div class="prep-brief-route">${esc(t.stops[0]?.name||'—')} <span>→</span> ${esc(t.stops[t.stops.length-1]?.name||'—')}</div><div class="prep-summary-stats"><div><small>HALTES</small><strong>${t.stops.length}</strong></div><div><small>EERSTE VERTREK</small><strong>${esc(t.stops[0]?.dep||'—')}</strong></div><div><small>VERTREK OVER</small><strong id="prepCountdown">${countdown(remain)}</strong></div></div><div class="field"><label for="prepCode">Dienstcode (optioneel)</label><div class="prep-code-row"><input id="prepCode" value="${esc(t.code||'')}" placeholder="Bijv. RE10 58219" /><button class="btn ghost" data-act="save-prep-code">Bewaren</button></div></div>${services.length&&!t.started?`<div class="field" style="margin-bottom:0"><label for="preService">Of laad een opgeslagen dienst</label><select id="preService"><option value="">Kies een dienst…</option>${services.map(s=>`<option value="${esc(s.id)}" ${s.id===t.serviceId?'selected':''}>${esc(s.code)}</option>`).join('')}</select></div>`:''}<div class="field" style="margin-top:13px;margin-bottom:0"><label for="prepEquipment">Materieel voor deze dienst (vrij invoerbaar)</label><div class="equipment-field"><input id="prepEquipment" list="equipmentChoices" placeholder="Bijv. Class 377, BR 442 of ICE 4" maxlength="90" autocomplete="off" value="${esc(t.equipment||'')}"/><button class="btn ghost sm" data-act="save-equipment">Opslaan</button></div><datalist id="equipmentChoices">${equipmentSuggestions(t.routeId).map(e=>`<option value="${esc(e)}"></option>`).join('')}</datalist><small class="muted tiny">Suggesties zijn voorbeelden, geen controle van beschikbaar materieel op je PS5.</small><div id="equipmentPreview">${equipmentInfoHtml(t.equipment)}</div></div></section></div>
+ <section class="prep-editor"><div class="prep-editor-top"><div><div class="prep-panel-label">DIENSTREGELING</div><h2>Haltes, tijden & sporen</h2><p>Tik op een tijd of gebruik de snelle invoer. Onbekende tijden en spoornummers blijven leeg.</p><div class="prep-quick-tools"><button class="btn ghost sm" data-act="bulk-times">⇧ Tijden plakken</button><button class="btn ghost sm" data-act="shift-times">◷ Alle tijden verschuiven</button></div></div><span class="prep-count">${t.stops.length} haltes</span></div><div class="prep-rows">${prepTimeRows(t)}</div><div class="prep-editor-foot">Snelle correcties: ±1 sec · ±30 sec · ±1 / 2 / 5 min. Tijden en aankomstsporen worden direct opgeslagen bij je dienst.</div></section></div>
  <div class="prep-bottom"><div class="prep-ready"><span class="ready-dot"></span><div><strong>${t.started?'Klaar om verder te rijden':'Klaar om de rit te volgen?'}</strong><small>${t.started?'Je kunt de gametijd en dienstregeling ook tijdens je rit wijzigen.':'Controleer de gametijd en tijden. Daarna open je het machinistenscherm.'}</small></div></div><button class="prep-depart" data-act="prep-depart">${t.started?'TERUG NAAR MACHINISTENSCHERM':'NAAR MACHINISTENSCHERM'} <span>→</span></button></div></div>`;
 }
 function monitorHtml(t){
@@ -943,18 +1182,28 @@ function monitorHtml(t){
    return `<span class="dm-delay-tag ${d>0?'is-late':d<0?'is-early':''}">${d>0?'+'+countdown(d):d<0?'−'+countdown(-d):'OP TIJD'}</span>`;
  };
  const timing=(planned,actual,kind)=>`<span class="dm-${kind}"><b>${esc(planned?planned.slice(0,8):'—')}</b>${actual?`<small title="Werkelijk geregistreerd">↳ ${esc(actual.slice(0,8))}</small>`:'<small class="notmeasured">—</small>'}</span>`;
- return `<section class="driver-monitor" style="--operator:${m.theme};--operator-light:${m.light}"><div class="dm-head"><div class="dm-eyebrow">ROUTEMONITOR · ${esc(m.operator)}</div><div class="dm-dest"><span class="dm-linecode">${esc(m.line)}</span><strong>${esc(dest)}</strong></div><div class="dm-service">Dienst ${esc(t.code||'zonder code')} · ${t.stops.length} haltes · boven gepland / onder werkelijk</div><div class="dm-summary"><span>●</span><b>${esc(summary)}</b></div></div><div class="dm-stophead"><span>TRAJECT</span><span>AANK. P / W</span><span>VERT. P / W</span></div><div class="dm-scroll">${t.stops.map((st,i)=>{const done=i<active,now=i===active;return `<div class="dm-stop ${done?'done':''} ${now?'now':''}"><div class="dm-station"><span class="dm-axis"><span class="dm-bullet"></span></span><span class="dm-name">${esc(st.name)}</span>${delayTag(st)}${now?`<span class="dm-nowtag">${t.phase==='travel'?'VOLGENDE':'HIER'}</span>`:''}</div>${timing(st.arr,st.actualArr,'arr')}${timing(st.dep,st.actualDep,'dep')}</div>`}).join('')}</div><div class="dm-bottom"><span>${esc(t.stops[0]?.name||'')}</span><span>${t.index+1} / ${t.stops.length}</span></div></section>`;
+ return `<section class="driver-monitor" style="--operator:${m.theme};--operator-light:${m.light}"><div class="dm-head"><div class="dm-eyebrow">ROUTEMONITOR · ${esc(m.operator)}</div><div class="dm-dest"><span class="dm-linecode">${esc(m.line)}</span><strong>${esc(dest)}</strong></div><div class="dm-service">Dienst ${esc(t.code||'zonder code')} · ${t.stops.length} haltes · boven gepland / onder werkelijk</div><div class="dm-summary"><span>●</span><b>${esc(summary)}</b></div></div><div class="dm-stophead"><span>TRAJECT</span><span>AANK. P / W</span><span>VERT. P / W</span></div><div class="dm-scroll">${t.stops.map((st,i)=>{const done=i<active,now=i===active;return `<div class="dm-stop ${done?'done':''} ${now?'now':''}"><div class="dm-station"><span class="dm-axis"><span class="dm-bullet"></span></span><span class="dm-name">${esc(st.name)}</span>${st.arrPlatform?`<span class="dm-platform" title="Aankomstspoor">sp. ${esc(st.arrPlatform)}</span>`:''}${delayTag(st)}${now?`<span class="dm-nowtag">${t.phase==='travel'?'VOLGENDE':'HIER'}</span>`:''}</div>${timing(st.arr,st.actualArr,'arr')}${timing(st.dep,st.actualDep,'dep')}</div>`}).join('')}</div><div class="dm-bottom"><span>${esc(t.stops[0]?.name||'')}</span><span>${t.index+1} / ${t.stops.length}</span></div></section>`;
+}
+function boardClass(t){
+ const id=t.routeId,route=state.routes.find(r=>r.id===id),country=route?.country||'';
+ if(id==='zwgron')return 'board-ns';
+ if(['ecw','airedale','wcml','londoncom','gwe','sehs','cathcart','fife','island22','blackpool','cardiff','mildmay','gospeloak'].includes(id)||country.includes('🇬🇧'))return 'board-uk';
+ if(['boston','trirail','bostwor','lirr','harlem','morris','nectrent','sanbern'].includes(id)||country.includes('🇺🇸'))return 'board-us';
+ if(country.includes('🇩🇪')||id==='frankfurt'||id==='rapid')return 'board-db';
+ if(country.includes('🇨🇭')||country.includes('🇦🇹')||id==='bernina')return 'board-alps';
+ return 'board-other';
 }
 function departureBoardHtml(t){
  const m=monitorStyle(t),at=t.phase==='station',here=t.stops[t.index],nx=t.stops[Math.min(t.index+1,t.stops.length-1)];
  const dest=t.stops.at(-1)?.name||'—',delay=measuredDelay(t);
  const scheduled=at?here.dep:(nx?.arr||nx?.dep);
  const following=t.stops.slice(at?t.index+1:t.index+2).map(s=>s.name).slice(0,3);
- const platform='—'; // Geen betrouwbare perrondata; nooit een spoor verzinnen.
+ const targetStop=at?here:nx;
+ const platform=String(targetStop?.arrPlatform||'').trim()||'—'; // Alleen het handmatig ingevulde aankomstspoor.
  const isFirst=at&&t.index===0&&!here.actualDep;
  const auto=stationAutoEligible(t);
  const status=t.finished?'RIT VOLTOOID':isFirst?'WACHT OP START':at&&auto?'AUTOMATISCH VERTREK':at&&delay>0?'VERTRAAGD '+deltaFmt(delay):at?'HANDMATIG VERTREK':'ONDERWEG';
- return `<section class="departure-board" style="--operator:${m.theme};--operator-dark:${m.dark};--operator-light:${m.light}"><div class="db-topline"><span class="db-carrier">${esc(m.badge)}</span><span class="db-type">VERTREKBORD · TSW</span></div><div class="db-main"><div class="db-above"><span>BESTEMMING</span><span>${at?'VERTREK':'VOLGENDE HALTE'}</span></div><div class="db-dest"><strong>${esc(dest)}</strong><b>${esc(scheduled?scheduled.slice(0,5):'—:—')}</b></div><div class="db-journey">${esc(m.line)} <span>•</span> ${esc(t.code||'Eigen dienst')} ${following.length?`<span>•</span> via ${esc(following.join(' · '))}`:''}</div></div><div class="db-lower"><div><span>SPOOR</span><strong>${platform}</strong></div><div><span>STATUS</span><strong class="${delay>0?'db-amber':'db-green'}">${esc(status)}</strong></div><div><span>SPELKLOK</span><strong id="boardTime">${gameText()}</strong></div></div><div class="db-note">Speltijden en jouw registraties · geen live spoorinformatie</div></section>`;
+ return `<section class="departure-board ${boardClass(t)}" aria-label="Vertrekbord van ${esc(m.operator)}" style="--operator:${m.theme};--operator-dark:${m.dark};--operator-light:${m.light}"><div class="db-topline"><span class="db-carrier">${esc(m.badge)}</span><span class="db-type">VERTREKMONITOR · TSW</span></div><div class="db-main"><div class="db-above"><span>BESTEMMING</span><span>${at?'VERTREK':'VOLGENDE HALTE'}</span></div><div class="db-dest"><strong>${esc(dest)}</strong><b>${esc(scheduled?scheduled.slice(0,5):'—:—')}</b></div><div class="db-journey"><b>${at?'OP STATION':'VOLGENDE STOP'}: ${esc(targetStop?.name||'—')}</b> <span>•</span> ${esc(m.line)} <span>•</span> ${esc(t.code||'Eigen dienst')} ${following.length?`<span>•</span> via ${esc(following.join(' · '))}`:''}</div></div><div class="db-lower"><div><span>AANKOMSTSPOOR</span><strong class="db-platform-value">${esc(platform)}</strong></div><div><span>STATUS</span><strong class="${delay>0?'db-amber':'db-green'}">${esc(status)}</strong></div><div><span>SPELKLOK</span><strong id="boardTime">${gameText()}</strong></div></div><div class="db-note">Spoor handmatig ingevoerd · geen live spoorinformatie</div></section>`;
 }
 function renderDrive(){
  const t=trip();if(!t){view='home';return renderHome();}
@@ -968,21 +1217,21 @@ function renderDrive(){
  const statusValue=delay===null?(isFirst?'KLAAR':'—'):delay>0?`+${countdown(delay)}`:delay<0?`−${countdown(-delay)}`:'OP TIJD';
  const hint=at?(t.index===t.stops.length-1?'Eindstation bereikt. Rond de rit af voor je statistieken.':isFirst?'Je staat op het beginstation. De spelklok telt door; tik pas op VERTREKKEN zodra je echt wegrijdt.':auto?'Op tijd aangekomen. Je vertrek wordt automatisch vastgelegd zodra de geplande vertrektijd is bereikt.':t.manualDepartureRequired&&delay>0?'Je bent met vertraging aangekomen. Tik zelf op VERTREKKEN wanneer je weer gaat rijden.':'Controleer je dienstregeling en tik op VERTREKKEN zodra je gaat rijden.'):'Tik op AANGEKOMEN zodra je de volgende halte bereikt.';
  const hintType=auto?'auto-wait':delay>0&&at?'manual-wait':'';
- return `<div class="new-workflow driver-screen"><div class="workflow-head driver-top"><div><div class="eyebrow">MACHINISTENMODUS · ${esc(t.code||'EIGEN DIENST')}</div><h1>${esc(t.route)}</h1><div class="workflow-sub">${esc(t.segment)}</div></div><div class="workflow-tools"><span class="live-mode"><span></span> ${isFirst?'KLAAR VOOR VERTREK':'RIT ACTIEF'}</span><button class="btn ghost sm" data-act="prepare">⚙ Sync & tijden</button><button class="btn ghost sm" data-act="home">Routes</button><button class="btn warn sm" data-act="abort-trip">✕ Rit afbreken</button></div></div>
- <div class="driver-columns"><div class="driver-main"><section class="driver-hero" style="--driverphoto:url('${String(meta.image||'').replace(/'/g,'%27')}')"><div class="driver-hero-top"><div><div class="driver-hero-label">${isFirst?'OP BEGINSTATION':at?'OP STATION':'ONDERWEG VANAF'}</div><h2>${esc(here.name)}</h2></div><div class="driver-clockgroup"><small>GAMETIJD</small><strong id="clockNow">${gameText()}</strong></div></div><div class="driver-next"><small>${at?'DAARNA':'VOLGENDE HALTE'}</small><h3>${esc(at?(t.index===t.stops.length-1?'Einde van de rit':next.name):next.name)}</h3></div><div class="driver-metrics"><div><small>${at?'GEPLAND VERTREK':'GEPLANDE AANKOMST'}</small><strong>${esc(plan||'—')}</strong></div><div><small>${at?'VERTREK OVER':'AANKOMST OVER'}</small><strong id="countdown">${countdown(left)}</strong></div><div><small>VERTRAGING / AFWIJKING</small><strong id="delay" class="${delay>0?'driver-status-late':delay===null?'driver-status-unknown':'driver-status-early'}">${esc(statusValue)}</strong></div></div><div class="driver-depart-hint ${hintType}"><span class="hint-icon">${auto?'◷':at?'◉':'↗'}</span><div><strong>${isFirst?'Beginstation · klaar voor vertrek':auto?'Automatisch vertrek gepland':at&&delay>0?'Vertraging geregistreerd':at?'Op station':'Op weg naar de volgende halte'}</strong>${esc(hint)}</div></div>${auto?`<div class="auto-depart-banner" aria-live="polite"><div><strong>Automatisch vertrek om ${esc(here.dep)}</strong><small>De app schakelt vanzelf naar de volgende halte.</small></div><b id="autoCountdown">${countdown(left)}</b></div>`:`<button class="driver-main-action ${at?'is-depart':'is-arrive'}" data-act="advance">${mainLabel} <span>→</span></button>`}<div class="driver-progress"><div style="width:${progress}%"></div></div><div class="driver-progress-label"><span>BEGIN</span><span>${Math.round(progress)}% van de rit</span><span>EIND</span></div></section>
- ${infoForDriver(t)}<div class="driver-extras"><button class="btn ghost sm" data-act="back-step">← Vorige stap</button><button class="btn ghost sm" data-act="times">✎ Dienstregeling</button><button class="btn ghost sm" data-act="open-stories" data-trip="1">▣ Routeverhalen</button></div></div><aside class="driver-side">${monitorHtml(t)}${departureBoardHtml(t)}</aside></div></div>`;
+ return `<div class="new-workflow driver-screen driver-v13"><div class="workflow-head driver-top"><div><div class="eyebrow">MACHINISTENMODUS · ${esc(t.code||'EIGEN DIENST')}</div><h1>${esc(t.route)}</h1><div class="workflow-sub">${esc(t.segment)}</div></div><div class="workflow-tools"><span class="live-mode"><span></span> ${isFirst?'KLAAR VOOR VERTREK':'RIT ACTIEF'}</span><button class="btn ghost sm" data-act="prepare">⚙ Sync & tijden</button><button class="btn ghost sm" data-act="home">Routes</button><button class="btn warn sm" data-act="abort-trip">✕ Rit afbreken</button></div></div>
+ <div class="driver-columns"><div class="driver-main"><section class="driver-hero" style="--driverphoto:url('${String(meta.image||'').replace(/'/g,'%27')}')"><div class="driver-hero-top"><div><div class="driver-hero-label">${isFirst?'OP BEGINSTATION':at?'OP STATION':'ONDERWEG VANAF'}</div>${t.equipment?`<div class="driver-equipment">🚆 ${esc(t.equipment)}</div>`:''}<h2>${esc(here.name)}</h2></div><div class="driver-clockgroup"><small>GAMETIJD</small><strong id="clockNow">${gameText()}</strong></div></div><div class="driver-next"><small>${at?'DAARNA':'VOLGENDE HALTE'}</small><h3>${esc(at?(t.index===t.stops.length-1?'Einde van de rit':next.name):next.name)}</h3></div><div class="driver-metrics"><div><small>${at?'GEPLAND VERTREK':'GEPLANDE AANKOMST'}</small><strong>${esc(plan||'—')}</strong></div><div><small>${at?'VERTREK OVER':'AANKOMST OVER'}</small><strong id="countdown">${countdown(left)}</strong></div><div><small>VERTRAGING / AFWIJKING</small><strong id="delay" class="${delay>0?'driver-status-late':delay===null?'driver-status-unknown':'driver-status-early'}">${esc(statusValue)}</strong></div></div><div class="driver-depart-hint ${hintType}"><span class="hint-icon">${auto?'◷':at?'◉':'↗'}</span><div><strong>${isFirst?'Beginstation · klaar voor vertrek':auto?'Automatisch vertrek gepland':at&&delay>0?'Vertraging geregistreerd':at?'Op station':'Op weg naar de volgende halte'}</strong>${esc(hint)}</div></div>${auto?`<div class="auto-depart-banner" aria-live="polite"><div><strong>Automatisch vertrek om ${esc(here.dep)}</strong><small>De app schakelt vanzelf naar de volgende halte.</small></div><b id="autoCountdown">${countdown(left)}</b></div>`:`<button class="driver-main-action ${at?'is-depart':'is-arrive'}" data-act="advance">${mainLabel} <span>→</span></button>`}<div class="driver-progress"><div style="width:${progress}%"></div></div><div class="driver-progress-label"><span>BEGIN</span><span>${Math.round(progress)}% van de rit</span><span>EIND</span></div></section>
+ ${infoForDriver(t)}${t.equipment?equipmentInfoHtml(t.equipment):''}<div class="driver-extras"><button class="btn ghost sm" data-act="back-step">← Vorige stap</button><button class="btn ghost sm" data-act="times">✎ Dienstregeling</button><button class="btn ghost sm" data-act="open-stories" data-trip="1">▣ Routeverhalen</button></div></div><aside class="driver-side">${departureBoardHtml(t)}${monitorHtml(t)}</aside></div></div>`;
 }
 
 function renderStories(){
  const ctx=routeForInfo(), route=state.routes.find(r=>r.id===ctx.routeId), stops=ctx.stops||[];
  const unique=[...new Set(stops)];
  const fullRoute=route?.name||'Routeinformatie';
- const stationItems=unique.map((name,i)=>{let key=stationKey(ctx.routeId,name),val=String(state.stationStories?.[key]||'').trim();return `<div class="info-item"><div class="preview"><strong>${i+1}. ${esc(name)}</strong><span>${val?esc(val.slice(0,100)+(val.length>100?'…':'')):'Nog geen stationsverhaal'}</span></div><button class="btn sm ghost" data-act="edit-note" data-kind="station" data-index="${i}">${val?'Bewerk':'Toevoegen'}</button></div>`}).join('');
+ const stationItems=unique.map((name,i)=>{let key=stationKey(ctx.routeId,name), own=String(state.stationStories?.[key]||'').trim(), entry=infoEntry('station',ctx.routeId,name),val=entry?.text||'';return `<div class="info-item"><div class="preview"><strong>${i+1}. ${esc(name)}</strong><span>${val?esc(val.slice(0,125)+(val.length>125?'…':'')):'Nog geen stationsverhaal'}</span>${!own&&entry?.source?srcLink(entry):''}</div><button class="btn sm ghost" data-act="edit-note" data-kind="station" data-index="${i}">${own?'Bewerk':'Eigen tekst'}</button></div>`}).join('');
  const pairs=stops.slice(0,-1).map((st,i)=>({from:st,to:stops[i+1]}));
  const trackItems=pairs.map((p,i)=>{let key=trackKey(ctx.routeId,p.from,p.to),val=String(state.trackFacts?.[key]||'').trim();return `<div class="info-item"><div class="preview"><strong>${esc(p.from)} → ${esc(p.to)}</strong><span>${val?esc(val.slice(0,100)+(val.length>100?'…':'')):'Nog geen baanvakfeitje'}</span></div><button class="btn sm ghost" data-act="edit-note" data-kind="track" data-index="${i}">${val?'Bewerk':'Toevoegen'}</button></div>`}).join('');
- const hasStations=unique.filter(name=>String(state.stationStories?.[stationKey(ctx.routeId,name)]||'').trim()).length;
+ const hasStations=unique.filter(name=>!!infoEntry('station',ctx.routeId,name)).length;
  const hasTracks=pairs.filter(p=>String(state.trackFacts?.[trackKey(ctx.routeId,p.from,p.to)]||'').trim()).length;
- return `<div class="panel"><div class="hrow"><div><div class="eyebrow">ROUTEVERHALEN · IN OPBOUW</div><h2 style="font-size:25px;margin:7px 0">${esc(fullRoute)}</h2><div class="tiny muted">${esc(ctx.segment)} · ${hasStations}/${unique.length} verhalen · ${hasTracks}/${pairs.length} weetjes</div></div><div class="wrap"><button class="btn primary" data-act="back-stories">← Terug</button></div></div><p class="notice">Dit is je eigen routebibliotheek. Je kunt stationsverhalen en feiten onderweg toevoegen. Lege velden blijven bewust leeg — de app verzint geen spoorweggeschiedenis. Alle teksten worden lokaal opgeslagen en meegenomen in je JSON-back-up.</p><div class="info-list"><section class="info-group"><h3 style="margin:0 0 8px;font-size:17px">Stationsverhalen</h3>${stationItems||'<p class="muted">Geen stations</p>'}</section><section class="info-group"><h3 style="margin:0 0 8px;font-size:17px">Bijzonder onderweg</h3>${trackItems||'<p class="muted">Geen baanvakken</p>'}</section></div></div>`;
+ return `<div class="panel"><div class="hrow"><div><div class="eyebrow">ROUTEVERHALEN · IN OPBOUW</div><h2 style="font-size:25px;margin:7px 0">${esc(fullRoute)}</h2><div class="tiny muted">${esc(ctx.segment)} · ${hasStations}/${unique.length} verhalen · ${hasTracks}/${pairs.length} weetjes</div></div><div class="wrap"><button class="btn primary" data-act="back-stories">← Terug</button></div></div>${CURATED_ROUTES[ctx.routeId]?`<div class="curated-route-fact"><strong>📖 Geverifieerd routefeitje</strong><p>${esc(CURATED_ROUTES[ctx.routeId].text)}</p>${srcLink(CURATED_ROUTES[ctx.routeId])}</div>`:''}<p class="notice">Dit is je eigen routebibliotheek. Je kunt stationsverhalen en feiten onderweg toevoegen. Er zijn enkele bronvermelde voorbeeldverhalen toegevoegd. Je eigen verhalen krijgen voorrang; voor andere stations verzinnen we niets. Alle teksten worden lokaal opgeslagen en meegenomen in je JSON-back-up.</p><div class="info-list"><section class="info-group"><h3 style="margin:0 0 8px;font-size:17px">Stationsverhalen</h3>${stationItems||'<p class="muted">Geen stations</p>'}</section><section class="info-group"><h3 style="margin:0 0 8px;font-size:17px">Bijzonder onderweg</h3>${trackItems||'<p class="muted">Geen baanvakken</p>'}</section></div></div>`;
 }
 let storyReturn='home',editStoryInfo=null;
 function openStories(fromTrip){storyFromTrip=Boolean(fromTrip&&trip());storyReturn=storyFromTrip?'drive':'home';view='stories';render();}
@@ -1010,8 +1259,8 @@ function openCredits(){
 
 function renderTimes(){const t=trip(); if(!t){view='home'; return renderHome();}
  return `<div class="panel"><div class="hrow"><div><div class="eyebrow">TIJDEN BEWERKEN</div><h2 style="font-size:26px;margin:8px 0 4px">${esc(t.route)} · ${esc(t.segment)}</h2><div class="muted tiny">Dienst ${esc(t.code||'Eigen dienst')}</div></div><div class="wrap"><button class="btn ghost" data-act="back-times">Terug</button><button class="btn primary" data-act="save-times">Klaar / opslaan</button></div></div>
- <div class="notice" style="margin-top:12px">Tik op een tijd om het tijdmenu te openen. De volgende lege tijd begint automatisch bij je laatst ingevoerde tijd. Je kunt <b>±1 sec, ±30 sec, ±1 min, ±2 min en ±5 min</b> gebruiken. Iedere tijd wordt direct opgeslagen onder deze dienstcode.</div>
- <div class="times-table" style="margin-top:16px"><div class="editrow minihead"><span>Station</span><span>Aankomst</span><span>Vertrek</span></div>${t.stops.map((st,i)=>`<div class="editrow"><div class="name">${esc(st.name)}</div><button class="timepicker-field ${st.arr?'':'empty'}" data-act="edit-time" data-index="${i}" data-field="arr" aria-label="Aankomsttijd ${esc(st.name)} aanpassen">${esc(st.arr||'−−:−−:−−')} <span class="pencil">✎</span></button><button class="timepicker-field ${st.dep?'':'empty'}" data-act="edit-time" data-index="${i}" data-field="dep" aria-label="Vertrektijd ${esc(st.name)} aanpassen">${esc(st.dep||'−−:−−:−−')} <span class="pencil">✎</span></button></div>`).join('')}</div></div>`;
+ <div class="notice" style="margin-top:12px">Tik op een tijd om het tijdmenu te openen. De volgende lege tijd begint automatisch bij je laatst ingevoerde tijd. Je kunt <b>±1 sec, ±30 sec, ±1 min, ±2 min en ±5 min</b> gebruiken. Ook het aankomstspoor kun je per station invullen. Tijden en sporen worden bij de dienst opgeslagen.</div>
+ <div class="times-table" style="margin-top:16px"><div class="editrow minihead"><span>Station</span><span>Aankomst</span><span>Vertrek</span><span>Spoor aank.</span></div>${t.stops.map((st,i)=>`<div class="editrow"><div class="name">${esc(st.name)}</div><button class="timepicker-field ${st.arr?'':'empty'}" data-act="edit-time" data-index="${i}" data-field="arr" aria-label="Aankomsttijd ${esc(st.name)} aanpassen">${esc(st.arr||'−−:−−:−−')} <span class="pencil">✎</span></button><button class="timepicker-field ${st.dep?'':'empty'}" data-act="edit-time" data-index="${i}" data-field="dep" aria-label="Vertrektijd ${esc(st.name)} aanpassen">${esc(st.dep||'−−:−−:−−')} <span class="pencil">✎</span></button><input class="prep-track-input" data-arr-platform="${i}" type="text" maxlength="12" autocomplete="off" placeholder="—" aria-label="Spoor bij aankomst op ${esc(st.name)}" value="${esc(st.arrPlatform||'')}" /></div>`).join('')}</div></div>`;
 }
 // Reistijd en punctualiteit worden uitsluitend uit werkelijk geregistreerde tijdstippen berekend.
 function tripDuration(from,to){
@@ -1051,19 +1300,118 @@ function renderDone(){
    const color=deviation!==null&&Math.abs(deviation)<=60?'good':deviation!==null&&deviation>60?'late':'';
    return `<div class="result-stop"><span class="result-station"><b>${String(i+1).padStart(2,'0')}</b><strong>${esc(stop.name)}</strong></span><span><small>Aankomst</small>${esc(fmtTime(stop.arr))}<em>${esc(fmtTime(stop.actualArr))}</em></span><span><small>Vertrek</small>${esc(fmtTime(stop.dep))}<em>${esc(fmtTime(stop.actualDep))}</em></span><span class="result-delta ${color}">${deviation===null?'—':deltaFmt(deviation)}</span></div>`;
  }).join('');
- return `<div class="results-screen new-workflow"><div class="results-banner"><div><span class="results-tick">✓ RIT VOLTOOID</span><h1>${esc(t.route)}</h1><p>${esc(first.name)} <span>→</span> ${esc(last.name)}</p><div class="results-meta">Dienst ${esc(t.code||'Eigen dienst')} · ${esc(t.segment)} · ${esc(monitorStyle(t).operator)}</div></div><div class="results-actions"><button class="btn primary" data-act="home">← Naar routes</button><button class="btn ghost" data-act="times">✎ Geplande tijden</button></div></div>
+ return `<div class="results-screen new-workflow"><div class="results-banner"><div><span class="results-tick">✓ RIT VOLTOOID</span><h1>${esc(t.route)}</h1><p>${esc(first.name)} <span>→</span> ${esc(last.name)}</p><div class="results-meta">Dienst ${esc(t.code||'Eigen dienst')} · ${esc(t.segment)} · ${esc(monitorStyle(t).operator)}${t.equipment?' · ' + esc(t.equipment):''}</div></div><div class="results-actions"><button class="btn primary" data-act="home">← Naar routes</button><button class="btn ghost" data-act="times">✎ Geplande tijden</button></div></div>
  <div class="results-metrics"><article class="result-metric"><small>STATIONS / HALTES</small><strong>${st.stations}</strong><span>${st.reached} aankomsten vastgelegd</span></article><article class="result-metric"><small>BAANVAKKEN</small><strong>${st.segments}</strong><span>Traject ${esc(first.name)} → ${esc(last.name)}</span></article><article class="result-metric"><small>WERKELIJKE REISTIJD</small><strong>${durationLabel(st.actualDuration)}</strong><span>Van vertrek tot laatste aankomst (speltijd)</span></article><article class="result-metric"><small>GEPLANDE REISTIJD</small><strong>${durationLabel(st.plannedDuration)}</strong><span>Op basis van de ingevulde dienstregeling</span></article><article class="result-metric"><small>OP TIJD AANGEKOMEN</small><strong>${score}</strong><span>Binnen ±1 minuut van de planning</span></article><article class="result-metric"><small>GEMIDDELDE AFWIJKING</small><strong>${deltaFmt(st.averageDeviation)}</strong><span>${st.arrivalChecks} aankomsten met geplande én werkelijke tijd</span></article></div>
  <section class="results-list"><div class="results-section-head"><div><div class="eyebrow">RITREGISTRATIE</div><h2>Stations en werkelijke tijden</h2><p>Per station: geplande tijd boven, geregistreerde tijd onder.</p></div><div class="results-times"><span>Vertrek <b>${esc(fmtTime(first.actualDep))}</b></span><span>Laatste aankomst <b>${esc(fmtTime(last.actualArr))}</b></span></div></div><div class="results-column-head"><span>STATION</span><span>AANKOMST</span><span>VERTREK</span><span>AFWIJKING AANKOMST</span></div><div class="results-table">${rows}</div></section><div class="results-remark">Statistieken zijn gebaseerd op de diensttijden en jouw tikken op VERTREKKEN/AANGEKOMEN. Zonder gemeten of geplande tijd wordt een waarde niet berekend. Spoorafstand wordt niet verzonnen.</div></div>`;
 }
 function render(){const app=$('app'); if(view==='drive') app.innerHTML=renderDrive(); else if(view==='prepare') app.innerHTML=renderPrepare(); else if(view==='stories') app.innerHTML=renderStories(); else if(view==='times') app.innerHTML=renderTimes(); else if(view==='done') app.innerHTML=renderDone(); else app.innerHTML=renderHome();}
-function exportBackup(){const payload={format:'TSW-Machinist-Lite',version:9,exported:new Date().toISOString(),data:state}; const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='tsw-machinist-lite-backup-'+new Date().toISOString().slice(0,10)+'.json'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),5000); toast('Back-up gemaakt');}
+function exportBackup(){const payload={format:'TSW-Machinist-Lite',version:14,exported:new Date().toISOString(),data:state}; const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='tsw-machinist-lite-backup-'+new Date().toISOString().slice(0,10)+'.json'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),5000); toast('Back-up gemaakt');}
 function importBackup(obj){const raw=obj&&obj.data?obj.data:obj; if(!raw||!raw.routes) return toast('Ongeldige back-up.'); state=migrate(raw); save(); view='home'; render(); toast('Back-up geïmporteerd');}
+
+// Updatesysteem v14. Controleert dezelfde GitHub Pages index.html; er is geen tweede bestand nodig.
+// Bewust geen automatische verversing: een actieve rit moet nooit onverwacht onderbroken worden.
+let updateAvailable=null;
+let updateChecking=false;
+let updateLastCheck=0;
+const UPDATE_RECHECK_MS=10*60*1000;
+function compareVersion(a,b){
+ const aa=String(a).split('.').map(x=>parseInt(x,10)||0),bb=String(b).split('.').map(x=>parseInt(x,10)||0);
+ for(let i=0;i<Math.max(aa.length,bb.length);i++){
+  if((aa[i]||0)!==(bb[i]||0))return (aa[i]||0)-(bb[i]||0);
+ }
+ return 0;
+}
+function showUpdateBanner(version){
+ updateAvailable=version;
+ const b=$('updateBanner');if(!b)return;
+ $('updateBannerTitle').textContent='Nieuwe TSW Companion-versie '+version+' beschikbaar';
+ $('updateBannerSub').textContent='Je diensten en tijden blijven op dit apparaat bewaard. Werk bij wanneer je niet aan het rijden bent.';
+ b.classList.remove('hide');
+ const dot=$('updateDot');if(dot)dot.hidden=false;
+}
+function dismissUpdate(){
+ $('updateBanner')?.classList.add('hide');
+ const dot=$('updateDot');if(dot)dot.hidden=false; // blijvende herinnering via Updates-knop
+}
+function setUpdateStatus(txt){const el=$('updateStatus');if(el)el.textContent=txt;}
+function updateSourceUrl(){
+ // Het bestand staat altijd als index.html in dezelfde map, ook bij een beginscherm-app.
+ const url=new URL('index.html',window.location.href);
+ url.search='';url.hash='';
+ return url;
+}
+async function checkForUpdates(manual=false){
+ if(updateChecking)return;
+ if(!/^https?:$/.test(window.location.protocol)){
+  if(manual){setUpdateStatus('Updatecontrole werkt op je GitHub Pages-website.');toast('Open de app via je GitHub Pages-link.');}
+  return;
+ }
+ if(!navigator.onLine){
+  if(manual){setUpdateStatus('Je bent offline. Probeer het later nog eens.');toast('Geen internetverbinding.');}
+  return;
+ }
+ updateChecking=true;
+ setUpdateStatus('Controleren of er een nieuwe versie is…');
+ const controller=new AbortController();
+ const kill=setTimeout(()=>controller.abort(),10000);
+ try{
+  const url=updateSourceUrl();
+  url.searchParams.set('_tsw_check',String(Date.now()));
+  const resp=await fetch(url.toString(),{cache:'no-store',signal:controller.signal});
+  if(!resp.ok)throw new Error('HTTP '+resp.status);
+  const page=await resp.text();
+  const match=page.match(/<meta\s+name=["']tsw-companion-version["']\s+content=["']([0-9]+(?:\.[0-9]+)*)["']/i);
+  if(!match)throw new Error('Versie-informatie ontbreekt op de website');
+  updateLastCheck=Date.now();
+  const remote=match[1];
+  if(compareVersion(remote,APP_VERSION)>0){
+   showUpdateBanner(remote);
+   setUpdateStatus('Versie '+remote+' staat klaar. Je kunt bijwerken wanneer je wilt.');
+  }else{
+   updateAvailable=null;
+   $('updateBanner')?.classList.add('hide');
+   const dot=$('updateDot');if(dot)dot.hidden=true;
+   setUpdateStatus('Versie '+APP_VERSION+' is actueel. Je gegevens blijven lokaal opgeslagen.');
+   if(manual)toast('Je hebt al de nieuwste versie ('+APP_VERSION+').');
+  }
+ }catch(err){
+  setUpdateStatus('Controle mislukt. Je kunt je app gewoon gebruiken en later opnieuw controleren.');
+  if(manual)toast('Updatecontrole niet gelukt. Probeer later opnieuw.');
+ }finally{
+  clearTimeout(kill);
+  updateChecking=false;
+ }
+}
+function openUpdateMenu(){
+ $('modalTitle').textContent='TSW Companion · App-updates';
+ $('modalBody').innerHTML=`<div class="notice" style="margin-top:0"><b>Geïnstalleerde versie: ${esc(APP_VERSION)}</b><p id="updateStatus" style="margin:7px 0 0;font-size:13px;line-height:1.65">${updateAvailable?'Nieuwe versie '+esc(updateAvailable)+' gevonden.':'Controleer je GitHub Pages-website voor een nieuwe versie.'}</p></div><p class="muted tiny">Een update verandert je lokaal opgeslagen diensten niet. De app laadt alleen opnieuw nadat jij daarvoor kiest. Maak regelmatig een JSON-back-up en werk niet bij midden in een rit.</p>`;
+ $('modalButtons').innerHTML=`<button class="btn primary" data-act="update-check">↻ Controleer updates</button><button class="btn ghost" data-act="update-refresh">↻ Ververs app</button><button class="btn ghost" data-act="close-modal">Sluiten</button>`;
+ $('modalBack').classList.remove('hide');
+ if(updateAvailable)setUpdateStatus('Nieuwe versie '+updateAvailable+' staat klaar. Tik op Ververs app om die te laden.');
+}
+function refreshApp(){
+ if(!/^https?:$/.test(window.location.protocol)){toast('Verversen kan via je GitHub Pages-website.');return;}
+ // Niet automatisch herladen bij actieve ritten; verplicht expliciet akkoord.
+ const t=trip();
+ if(t && t.started && !t.finished && !confirm('Je bent bezig met een rit. Wil je echt nu vernieuwen? Wacht liever tot de rit klaar is.'))return;
+ if(!save())return; // voorkom verlaten indien lokale opslag niet lukt
+ const url=updateSourceUrl();
+ url.searchParams.set('_tsw_refresh',String(Date.now()));
+ // Zelfde herkomst: Safari/beginscherm behoudt zijn eigen lokale gegevens.
+ window.location.replace(url.toString());
+}
+
 $('importFile').addEventListener('change',async e=>{const file=e.target.files?.[0]; if(!file) return; try{const txt=await file.text(); importBackup(JSON.parse(txt));}catch(err){toast('Importeren mislukt.')} e.target.value='';});
 document.addEventListener('click',e=>{
  const btn=e.target.closest('[data-act]');if(!btn)return;
  const act=btn.dataset.act,id=btn.dataset.id;
- if(act==='photo-credits')openCredits();
+ if(act==='update-menu')openUpdateMenu();
+ else if(act==='update-check')checkForUpdates(true);
+ else if(act==='update-refresh')refreshApp();
+ else if(act==='update-later')dismissUpdate();
+ else if(act==='photo-credits')openCredits();
  else if(act==='open-stories')openStories(btn.dataset.trip==='1');
+ else if(act==='story-detail')showStoryDetail();
  else if(act==='back-stories'){view=storyReturn;storyFromTrip=false;render();}
  else if(act==='edit-note')editNote(btn.dataset.kind,btn.dataset.index);
  else if(act==='save-note')saveNote();
@@ -1090,6 +1438,12 @@ document.addEventListener('click',e=>{
  else if(act==='prepare'){view='prepare';render();}
  else if(act==='prep-depart')departFromPrepare();
  else if(act==='save-prep-code')updatePreparedCode();
+ else if(act==='save-equipment')updateEquipment($('prepEquipment')?.value||'');
+ else if(act==='bulk-times')openBulkTimes();
+ else if(act==='apply-bulk-times')applyBulkTimes();
+ else if(act==='shift-times')openShiftTimes();
+ else if(act==='shift-preset'){$('shiftMinutes').value=btn.dataset.value;}
+ else if(act==='apply-shift')shiftTripTimes(Number($('shiftMinutes')?.value));
  else if(act==='times')openTimes();
  else if(act==='drive'){view='drive';render();}
  else if(act==='back-times'){view=timesReturn;render();}
@@ -1105,7 +1459,11 @@ document.addEventListener('click',e=>{
  else if(act==='export')exportBackup();
  else if(act==='import')$('importFile').click();
 });
-document.addEventListener('change',e=>{if(e.target?.id==='preService'&&e.target.value)usePreparedService(e.target.value);});
+document.addEventListener('change',e=>{
+ if(e.target?.matches?.('[data-arr-platform]'))saveArrivalPlatform(e.target.dataset.arrPlatform,e.target.value);
+ if(e.target?.id==='preService'&&e.target.value)usePreparedService(e.target.value);
+ if(e.target?.id==='prepEquipment')updateEquipment(e.target.value);
+});
 document.addEventListener('input',e=>{
  if(e.target?.id!=='routeSearch')return;
  const q=String(e.target.value||'').toLocaleLowerCase('nl').trim();
@@ -1133,9 +1491,11 @@ function updateClockUI(){
 }
 
 setInterval(updateClockUI,500);
-document.addEventListener('visibilitychange',()=>{if(!document.hidden)updateClockUI();});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){updateClockUI();if(Date.now()-updateLastCheck>UPDATE_RECHECK_MS)checkForUpdates(false);}});
 window.addEventListener('focus',updateClockUI);
 render();
+// Controle bij starten, zonder rit of bestaande gegevens te onderbreken.
+setTimeout(()=>checkForUpdates(false),1100);
 })();
 </script>
 </body>
